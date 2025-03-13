@@ -12,6 +12,7 @@ Berikut ini adalah teman-teman saya di kelas:
 - [Allysa Humaira](https://allysahumaira.github.io/)  
 - [Ananda Putri Nabilla](https://anandaaputrinabilla.github.io/)  
 - [Anggi Syaban Nabila Batubara](https://angginabilabatubara.github.io/)  
+- [Balqis Misyia](https://balqismisyia.github.io)  
 - [Darmawan Sahputra](https://darmawansahputra1.github.io/)  
 - [Dinda Eliza](https://dindaelz06.github.io/)  
 - [Farid Haiqal](https://fared08.github.io/)  
