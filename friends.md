@@ -1,6 +1,7 @@
 ---
 layout : default 
 title : friends
+---
 
 # Friends Page
 
@@ -10,6 +11,7 @@ Berikut ini adalah teman-teman saya di kelas:
 - [Al Faiz Akbar Thaib](https://alfaizakbar.github.io/)  
 - [Alisya Teriana](https://alisyateriana.github.io/)  
 - [Allysa Humaira](https://allysahumaira.github.io/)  
+- [Amirullah](https://amirullah310.github.io/)  
 - [Ananda Putri Nabilla](https://anandaaputrinabilla.github.io/)  
 - [Anggi Syaban Nabila Batubara](https://angginabilabatubara.github.io/)  
 - [Balqis Misyia](https://balqismisyia.github.io)  
@@ -28,4 +30,6 @@ Berikut ini adalah teman-teman saya di kelas:
 - [Mutiara Assyifa](https://mutyaraassyifa.github.io/)  
 - [Najwa Al Fajra](https://najwaal-fajra.github.io/)  
 - [Nursita](https://nursitaaa.github.io/)  
+- [Rafii Habibi](https://rafi-i-habibi.github.io/)  
+- [Syahan Alfatih](https://syahanalfatih.github.io/)  
 - [Teuku Ahmad Addairabi As Syafii](https://addairabi.github.io/)  
