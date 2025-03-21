@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <nav id="navbar">
+  <div class="nav-container">
+    <!-- Tombol Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Link Navigasi -->
+    <div class="nav-links" id="navLinks">
+      
+        <a href="/" >
+          Home
+        </a>
+      
+        <a href="/friends.html" >
+          Friends
+        </a>
+      
+        <a href="/blog.html" >
+          Blog
+        </a>
+      
+    </div>
+  </div>
+</nav>
+
+<script>
+function toggleMenu() {
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.getElementById('navLinks');
+const links = navLinks.querySelectorAll('a');
+
+// ✅ Toggle saat hamburger diklik
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+// ✅ Link di dalam navbar TIDAK menutup navbar
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.stopPropagation(); // Hindari efek toggle pas link diklik
+  });
+});
+
+  
+}
+
+</script>
+
+  <h1>Markdown</h1>
+<p>06 Mar 2025 </p>
+
+<p>Penjelasan tentang markdown</p>
+
+<p><img src="/assets/images/html-link-dan-lists.png" alt="Html Link dan Lists" /></p>
+
+<p>Sumber : Wikipedia</p>
+
+<h1 id="-markdown-penjelasan-lengkap">📝 Markdown: Penjelasan Lengkap</h1>
+
+<h2 id="-sejarah-markdown">🔎 Sejarah Markdown</h2>
+<p>
+Markdown pertama kali diperkenalkan oleh <strong>John Gruber</strong> dan <strong>Aaron Swartz</strong> pada tahun <strong>2004</strong>. Tujuannya adalah untuk membuat format teks yang dapat dibaca secara mudah oleh manusia, tetapi juga dapat dikonversi menjadi HTML secara otomatis. Filosofi utama Markdown adalah <strong>"mudah dibaca dan mudah ditulis."</strong>
+</p>
+
+<hr />
+
+<h2 id="-sintaks-dasar-markdown">📄 Sintaks Dasar Markdown</h2>
+<p>
+Markdown menggunakan simbol sederhana seperti <code>#</code>, <code>*</code>, <code>-</code>, dan <code>`</code> untuk memformat teks. Berikut adalah <strong>sintaks dasar</strong> dalam <strong>Markdown</strong>:
+</p>
+
+<h3 id="1-heading-judul">1. <strong>Heading (Judul)</strong></h3>
+<p>Gunakan tanda <code class="language-plaintext highlighter-rouge">#</code> untuk membuat heading dengan berbagai level:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong></p>
+
+<h1 id="heading-1">Heading 1</h1>
+<h2 id="heading-2">Heading 2</h2>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<h6 id="heading-6">Heading 6</h6>
+
+<hr />
+
+<h3 id="2-teks-tebal-miring-dan-coret">2. <strong>Teks Tebal, Miring, dan Coret</strong></h3>
+<ul>
+  <li><strong>Tebal</strong>: Gunakan <code class="language-plaintext highlighter-rouge">**</code> atau <code class="language-plaintext highlighter-rouge">__</code></li>
+  <li><em>Miring</em>: Gunakan <code class="language-plaintext highlighter-rouge">*</code> atau <code class="language-plaintext highlighter-rouge">_</code></li>
+  <li><del>Coret</del>: Gunakan <code class="language-plaintext highlighter-rouge">~~</code></li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gs">**Teks Tebal**</span> atau __Teks Tebal__
+<span class="ge">*Teks Miring*</span> atau _Teks Miring_
+~~Teks Dicoret~~
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong></p>
+
+<p><strong>Teks Tebal</strong><br />
+<em>Teks Miring</em><br />
+<del>Teks Dicoret</del></p>
+
+<hr />
+
+<h3 id="3-daftar-list">3. <strong>Daftar (List)</strong></h3>
+<h4 id="️-daftar-tak-berurutan-unordered-list">➡️ Daftar Tak Berurutan (Unordered List)</h4>
+<p>Gunakan <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">+</code>, atau <code class="language-plaintext highlighter-rouge">*</code> diikuti dengan spasi:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Item 1
+<span class="p">-</span> Item 2
+<span class="p">  -</span> Sub-item 2.1
+<span class="p">  -</span> Sub-item 2.2
+<span class="p">-</span> Item 3
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong></p>
+<ul>
+  <li>Item 1</li>
+  <li>Item 2
+    <ul>
+      <li>Sub-item 2.1</li>
+      <li>Sub-item 2.2</li>
+    </ul>
+  </li>
+  <li>Item 3</li>
+</ul>
+
+<h4 id="️-daftar-berurutan-ordered-list">➡️ Daftar Berurutan (Ordered List)</h4>
+<p>Gunakan angka diikuti dengan titik (<code class="language-plaintext highlighter-rouge">.</code>):</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">1.</span> Item pertama
+<span class="p">2.</span> Item kedua
+<span class="p">3.</span> Item ketiga
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong></p>
+<ol>
+  <li>Item pertama</li>
+  <li>Item kedua</li>
+  <li>Item ketiga</li>
+</ol>
+
+<hr />
+
+<h3 id="4-tautan-link">4. <strong>Tautan (Link)</strong></h3>
+<p>Gunakan format berikut untuk membuat tautan:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">OpenAI</span><span class="p">](</span><span class="sx">https://www.openai.com</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong><br />
+<a href="https://www.openai.com">OpenAI</a></p>
+
+<hr />
+
+<h3 id="5-gambar">5. <strong>Gambar</strong></h3>
+<p>Gunakan format <code class="language-plaintext highlighter-rouge">![teks alternatif](URL)</code> untuk menyisipkan gambar:</p>
+
+<p>
+![Logo Markdown](https://upload.wikimedia.org/wikipedia/commons/4/48/ Markdown-mark.svg)
+</p>
+
+<p><strong>Hasil:</strong><br />
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg" alt="Logo Markdown" /></p>
+
+<hr />
+
+<h3 id="6-kode-inline-dan-blok">6. <strong>Kode (Inline dan Blok)</strong></h3>
+<ul>
+  <li><strong>Kode inline</strong>: Gunakan <code class="language-plaintext highlighter-rouge">`</code> di awal dan akhir teks</li>
+  <li><strong>Blok kode</strong>: Gunakan tiga backtick (```) di awal dan akhir blok kode. Bisa ditentukan bahasa pemrograman untuk highlighting.</li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Kode inline: <span class="sb">`print("Hello, world!")`</span>
+
+Blok kode:
+<span class="p">```</span><span class="nl">python
+</span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, world!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+**Hasil:**
+
+Kode inline: `print("Hello, world!")`
+
+Blok kode:
+```python
+def hello():
+    print("Hello, world!")
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="7-kutipan-blockquote">7. <strong>Kutipan (Blockquote)</strong></h3>
+<p>Gunakan <code class="language-plaintext highlighter-rouge">&gt;</code> di awal baris untuk membuat kutipan:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; Ini adalah kutipan.</span>
+<span class="gt">&gt;&gt; Ini adalah kutipan bersarang.</span>
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong></p>
+
+<blockquote>
+  <p>Ini adalah kutipan.</p>
+  <blockquote>
+    <p>Ini adalah kutipan bersarang.</p>
+  </blockquote>
+</blockquote>
+
+<hr />
+
+<h3 id="8-garis-pemisah-horizontal-line">8. <strong>Garis Pemisah (Horizontal Line)</strong></h3>
+<p>Gunakan <code class="language-plaintext highlighter-rouge">---</code>, <code class="language-plaintext highlighter-rouge">***</code>, atau <code class="language-plaintext highlighter-rouge">___</code> untuk membuat garis pemisah:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">---</span>
+<span class="p">***</span>
+<span class="ge">__</span>_
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong></p>
+
+<hr />
+
+<hr />
+
+<h3 id="9-tabel">9. <strong>Tabel</strong></h3>
+<p>Gunakan garis <code class="language-plaintext highlighter-rouge">|</code> untuk membuat tabel:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Kolom 1 | Kolom 2 | Kolom 3 |
+|---------|---------|---------|
+| Data 1  | Data 2  | Data 3  |
+| Data 4  | Data 5  | Data 6  |
+</code></pre></div></div>
+
+<p><strong>Hasil:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kolom 1</th>
+      <th>Kolom 2</th>
+      <th>Kolom 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <tr>
+      <td>Data 4</td>
+      <td>Data 5</td>
+      <td>Data 6</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-contoh-penggunaan-markdown">🎯 Contoh Penggunaan Markdown</h2>
+<ol>
+  <li><strong>Dokumentasi Kode</strong> – Digunakan di GitHub dan GitLab untuk README.md</li>
+  <li><strong>Catatan</strong> – Digunakan untuk mencatat di aplikasi seperti Obsidian atau Notion</li>
+  <li><strong>Blog</strong> – Beberapa platform blogging mendukung Markdown</li>
+  <li><strong>Presentasi</strong> – Alat seperti Marp atau Deckset mendukung Markdown</li>
+</ol>
+
+<hr />
+
+<h2 id="-keunggulan-markdown">🌟 Keunggulan Markdown</h2>
+<p>✅ Mudah dipelajari dan digunakan<br />
+✅ Tidak memerlukan editor khusus<br />
+✅ File teks Markdown (<code class="language-plaintext highlighter-rouge">.md</code>) ringan dan mudah dipindahkan<br />
+✅ Didukung oleh banyak platform (GitHub, GitLab, Jupyter Notebook, dll.)</p>
+
+<hr />
+
+<h2 id="-keterbatasan-markdown">🚫 Keterbatasan Markdown</h2>
+<p>❌ Fitur format terbatas dibanding HTML/CSS<br />
+❌ Tidak semua platform mendukung semua fitur Markdown<br />
+❌ Kurang fleksibel untuk tata letak yang kompleks</p>
+
+<hr />
+
+<h2 id="-varian-markdown">🏆 Varian Markdown</h2>
+<p>Beberapa platform menggunakan ekstensi atau varian Markdown untuk menambahkan fitur tambahan:</p>
+
+<ul>
+  <li><strong>GitHub Flavored Markdown (GFM)</strong> – Mendukung task list, mention, dan highlighting sintaks tambahan</li>
+  <li><strong>CommonMark</strong> – Standar resmi Markdown</li>
+  <li><strong>MultiMarkdown</strong> – Menambahkan fitur seperti catatan kaki dan tabel yang kompleks</li>
+</ul>
+
+<hr />
+
+<h2 id="-tips-dan-trik">💡 Tips dan Trik</h2>
+<p>✨ Gunakan ekstensi editor seperti <strong>Markdown Preview</strong> di VSCode untuk melihat hasil Markdown secara langsung.<br />
+✨ Tambahkan komentar di Markdown dengan <code class="language-plaintext highlighter-rouge">&lt;!-- komentar --&gt;</code> jika diperlukan.<br />
+✨ Gunakan GitHub Flavored Markdown (GFM) jika menulis untuk GitHub.</p>
+
+<hr />
+
+<h2 id="-kesimpulan">🚀 Kesimpulan</h2>
+<p>
+<strong>Markdown</strong> adalah bahasa markup ringan yang sangat berguna untuk menulis teks terformat dengan cara yang sederhana dan mudah dibaca. <strong>Fleksibilitas</strong> dan <strong>kesederhanaannya</strong> membuat <strong>Markdown</strong> menjadi pilihan populer di kalangan <strong>developer</strong>, <strong>penulis</strong>, dan <strong>content creator</strong>.
+</p>
+
+  
+</body>
+</html>
