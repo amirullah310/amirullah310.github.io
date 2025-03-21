@@ -1,10 +1,43 @@
-<nav>
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" 
-    {% if page.url == item.link %}
-    class="current"
-    {% endif %}>
-    {{ item.name }}
-    </a>
-  {% endfor %}
+<nav id="navbar">
+  <div class="nav-container">
+    <!-- Tombol Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Link Navigasi -->
+    <div class="nav-links" id="navLinks">
+      {% for item in site.data.navigation %}
+        <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
 </nav>
+
+<script>
+function toggleMenu() {
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.getElementById('navLinks');
+const links = navLinks.querySelectorAll('a');
+
+// ✅ Toggle saat hamburger diklik
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+// ✅ Link di dalam navbar TIDAK menutup navbar
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.stopPropagation(); // Hindari efek toggle pas link diklik
+  });
+});
+
+  
+}
+
+</script>

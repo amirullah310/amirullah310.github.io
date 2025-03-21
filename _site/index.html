@@ -4,32 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <nav>
-  
-    <a href="/" 
-    
-    class="current"
-    >
-    Home
-    </a>
-  
-    <a href="/friends.html" 
-    >
-    Friends
-    </a>
-  
-    <a href="/blog.html" 
-    >
-    Blog
-    </a>
-  
-</nav>
-     <h1>Nama : <span class="last_name">Amirullah</span></h1>
-   <p> Deskripsi diri : Halo semua, saya Amirullah. Hobi saya adalah menggambar dan bermain badminton. Saya tinggal di Desa Kumbang Punteut, sebuah desa kecil yang berada di Kecamatan Blang Mangat, Kota Lhokseumawe, Provinsi Aceh. Desa ini adalah tempat di mana saya dibesarkan dan di mana impian-impiansaya mulai berkembang. Sejak kecil, saya selalu terpesona oleh potensi teknologi untuk menciptakan perubahan positif dalam masyarakat. Cita-cita saya adalah menjadi seorang programmer sukses yang dapat memberikan kontribusi berarti bagi dunia melalui karya-karya inovatif saya. Saya berasal dari SMKN 1 Lhokseumawe, dan sekarang saya adalah seorang mahasiswa Politeknik Negeri Lhokseumawe </p>
+  <nav id="navbar">
+  <div class="nav-container">
+    <!-- Tombol Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
+    <!-- Link Navigasi -->
+    <div class="nav-links" id="navLinks">
+      
+        <a href="/" class="current">
+          Home
+        </a>
+      
+        <a href="/friends.html" >
+          Friends
+        </a>
+      
+        <a href="/blog.html" >
+          Blog
+        </a>
+      
+    </div>
+  </div>
+</nav>
+
+<script>
+function toggleMenu() {
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.getElementById('navLinks');
+const links = navLinks.querySelectorAll('a');
+
+// ✅ Toggle saat hamburger diklik
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+// ✅ Link di dalam navbar TIDAK menutup navbar
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.stopPropagation(); // Hindari efek toggle pas link diklik
+  });
+});
+
+  
+}
+
+</script>
+
+  <div class="container">
+   <!-- Foto Profil -->
+   <!-- <div class="profile">
+     <img src="assets/images/profile.jpg" alt="Foto Amirullah" class="profile-img">
+   </div> -->
+ 
+   <!-- Nama -->
+   <h1>Nama: <span class="last_name">Amirullah</span></h1>
+ 
+   <!-- Deskripsi Diri -->
+   <p>
+     Halo semua, saya Amirullah. Hobi saya adalah menggambar dan bermain bulutangkis.
+     Saya tinggal di Desa Kumbang Punteut, sebuah desa kecil yang berada di Kecamatan Blang Mangat, Kota Lhokseumawe, Provinsi Aceh.
+     <br><br>
+     Desa ini adalah tempat di mana saya dibesarkan dan di mana impian-impian saya mulai berkembang. 
+     Sejak kecil, saya selalu terpesona oleh potensi teknologi untuk menciptakan perubahan positif dalam masyarakat.
+     <br><br>
+     Cita-cita saya adalah menjadi seorang programmer sukses yang dapat memberikan kontribusi berarti bagi dunia melalui karya-karya inovatif saya.
+     Saya berasal dari SMKN 1 Lhokseumawe, dan sekarang saya adalah seorang mahasiswa Politeknik Negeri Lhokseumawe.
+   </p>
+ 
+   <!-- Daftar Hobi -->
+   <h2>🎯 Hobi Saya:</h2>
+   <ul class="hobby-list">
+     <li>🖌️ Menggambar</li>
+     <li>🏸 Bermain Bulutangkis</li>
+     <li>💻 Ngoding</li>
+     <li>📸 Fotografi</li>
+   </ul>
+ 
+   <!-- Tombol Call to Action -->
+   <!-- <div class="cta">
+     <a href="#portfolio" class="btn-primary">Lihat Karya Saya</a>
+     <a href="#contact" class="btn-secondary">Hubungi Saya</a>
+   </div>
+  -->
+   <!-- Ikon Media Sosial -->
+   <!-- <div class="social-links">
+     <a href="https://github.com/amirullah310" target="_blank">
+       <img src="assets/images/github.png" alt="GitHub">
+     </a>
+     <a href="https://www.linkedin.com/in/amirullah310" target="_blank">
+       <img src="assets/images/linkedin.png" alt="LinkedIn">
+     </a>
+     <a href="https://www.instagram.com/amirullah310" target="_blank">
+       <img src="assets/images/instagram.png" alt="Instagram">
+     </a>
+   </div>
+ </div> -->
+ 
   
 </body>
 </html>

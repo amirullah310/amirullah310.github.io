@@ -4,29 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <nav>
-  
-    <a href="/" 
-    >
-    Home
-    </a>
-  
-    <a href="/friends.html" 
-    >
-    Friends
-    </a>
-  
-    <a href="/blog.html" 
-    
-    class="current"
-    >
-    Blog
-    </a>
-  
+  <nav id="navbar">
+  <div class="nav-container">
+    <!-- Tombol Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Link Navigasi -->
+    <div class="nav-links" id="navLinks">
+      
+        <a href="/" >
+          Home
+        </a>
+      
+        <a href="/friends.html" >
+          Friends
+        </a>
+      
+        <a href="/blog.html" class="current">
+          Blog
+        </a>
+      
+    </div>
+  </div>
 </nav>
+
+<script>
+function toggleMenu() {
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.getElementById('navLinks');
+const links = navLinks.querySelectorAll('a');
+
+// ✅ Toggle saat hamburger diklik
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+// ✅ Link di dalam navbar TIDAK menutup navbar
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.stopPropagation(); // Hindari efek toggle pas link diklik
+  });
+});
+
+  
+}
+
+</script>
+
   <h1>Blog</h1>
 
 <ul>
@@ -34,6 +66,27 @@
     <li>
         <a href="/2025/03/20/html-link-dan-list.html">HTML Link dan Lists</a>
         <p>20 Mar 2025</p>
+        <p><p>Penjelasan tentang link dan lists pada HTML</p>
+</p>    
+    </li>
+    
+    <li>
+        <a href="/2025/03/13/html-navigation.html">HTML Navigation</a>
+        <p>13 Mar 2025</p>
+        <p><p>Penjelasan tentang link dan lists pada HTML</p>
+</p>    
+    </li>
+    
+    <li>
+        <a href="/2025/03/06/html-friends-list.html">HTML Friends List</a>
+        <p>06 Mar 2025</p>
+        <p><p>Penjelasan tentang link dan lists pada HTML</p>
+</p>    
+    </li>
+    
+    <li>
+        <a href="/2025/02/20/github-repository.html">Github</a>
+        <p>20 Feb 2025</p>
         <p><p>Penjelasan tentang link dan lists pada HTML</p>
 </p>    
     </li>

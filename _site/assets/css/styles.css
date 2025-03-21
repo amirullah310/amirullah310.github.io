@@ -1,0 +1,190 @@
+@charset "UTF-8";
+.current {
+  color: green;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.last_name {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.blog-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+a {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+nav {
+  background-color: #f9f9f9;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  /* ✅ Style Hamburger */
+  /* ✅ Responsif (Hamburger aktif) */
+}
+nav .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  /* ✅ Style saat aktif jadi X */
+}
+nav .hamburger .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+nav .hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+nav .hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+nav .hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+nav .nav-links {
+  display: flex;
+  gap: 25px;
+}
+nav .nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+nav .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+nav .nav-links a:hover {
+  color: #3498db;
+}
+nav .nav-links a:hover::after {
+  width: 100%;
+}
+nav .nav-links .current {
+  color: #3498db;
+  font-weight: 600;
+}
+nav .nav-links .current::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  nav {
+    /* ✅ Efek muncul saat toggle */
+  }
+  nav .hamburger {
+    display: flex;
+  }
+  nav .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #f9f9f9;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transform: translateY(-200%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+  }
+  nav .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

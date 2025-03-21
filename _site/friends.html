@@ -4,29 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>friends</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <nav>
-  
-    <a href="/" 
-    >
-    Home
-    </a>
-  
-    <a href="/friends.html" 
-    
-    class="current"
-    >
-    Friends
-    </a>
-  
-    <a href="/blog.html" 
-    >
-    Blog
-    </a>
-  
+  <nav id="navbar">
+  <div class="nav-container">
+    <!-- Tombol Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Link Navigasi -->
+    <div class="nav-links" id="navLinks">
+      
+        <a href="/" >
+          Home
+        </a>
+      
+        <a href="/friends.html" class="current">
+          Friends
+        </a>
+      
+        <a href="/blog.html" >
+          Blog
+        </a>
+      
+    </div>
+  </div>
 </nav>
+
+<script>
+function toggleMenu() {
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.getElementById('navLinks');
+const links = navLinks.querySelectorAll('a');
+
+// ✅ Toggle saat hamburger diklik
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+// ✅ Link di dalam navbar TIDAK menutup navbar
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.stopPropagation(); // Hindari efek toggle pas link diklik
+  });
+});
+
+  
+}
+
+</script>
+
   <h1 id="friends-page">Friends Page</h1>
 
 <p>Berikut ini adalah teman-teman saya di kelas:</p>
