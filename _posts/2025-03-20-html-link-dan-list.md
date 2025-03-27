@@ -32,7 +32,8 @@ Berikut adalah atribut-atribut yang biasa digunakan pada elemen `<a>`:
 - **`href`** – Menentukan URL tujuan link.  
     **Contoh:**
     ```html
-    <a href="https://www.example.com">Kunjungi Example</a>
+    <a href="https://www.example.com">
+    Kunjungi Example</a>
     ```
 
 - **`target`** – Menentukan bagaimana link dibuka.  
@@ -44,15 +45,16 @@ Berikut adalah atribut-atribut yang biasa digunakan pada elemen `<a>`:
 
     **Contoh:**
     ```html
-    <a href="https://www.example.com" target="_blank">
+    <a href="https://www.example.com" 
+    target="_blank">
     Buka di Tab Baru</a>
     ```
 
 - **`title`** – Menampilkan keterangan saat kursor diarahkan ke link.  
     **Contoh:**
     ```html
-    <a href="#" title="Keterangan">Link dengan 
-    Keterangan</a>
+    <a href="#" title="Keterangan">
+    Link dengan Keterangan</a>
     ```
 
 - **`rel`** – Menentukan hubungan antara dokumen dengan link tujuan.  
@@ -63,16 +65,18 @@ Berikut adalah atribut-atribut yang biasa digunakan pada elemen `<a>`:
 
     **Contoh:**
     ```html
-    <a href="https://www.example.com" target="_blank" 
-    rel="nofollow noopener noreferrer">Kunjungi 
-    Example dengan Aman
+    <a href="https://www.example.com"
+    target="_blank" rel="nofollow 
+    noopener noreferrer">
+    Kunjungi Example dengan Aman
     </a>
     ```
 
 - **`download`** – Menginstruksikan browser untuk mengunduh file daripada membukanya.  
     **Contoh:**
     ```html
-    <a href="file.pdf" download>Unduh File PDF</a>
+    <a href="file.pdf" download>
+    Unduh File PDF</a>
     ```
 
 ### **C. Nilai untuk Atribut `target`**  
@@ -85,7 +89,8 @@ Berikut adalah nilai yang dapat digunakan pada atribut `target`:
 
 **Contoh:**
 ```html
-<a href="https://www.example.com" target="_blank">
+<a href="https://www.example.com" 
+target="_blank">
 Buka di Tab Baru</a>
 ```
 ### **D. Nilai untuk Atribut `rel`**  
@@ -98,8 +103,10 @@ Berikut adalah nilai yang umum digunakan pada atribut `rel`:
 
 **Contoh:**
 ```html
-<a href="https://www.example.com" target="_blank" 
-rel="noopener noreferrer">Kunjungi Example dengan Aman
+<a href="https://www.example.com" 
+target="_blank" 
+rel="noopener noreferrer">
+Kunjungi Example dengan Aman
 </a>
 ```
 
@@ -185,12 +192,13 @@ Berikut adalah contoh penggunaan **link** di dalam **list** untuk menautkan ke s
 ```html
 <h2>Daftar Teknologi Web</h2>
 <ol>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/
-    HTML">HTML</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/
-    CSS">CSS</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/
-    JavaScript">JavaScript</a></li>
+    <li><a href="https://developer.mozilla
+    .org/en-US/docs/Web/HTML">HTML</a></li>
+    <li><a href="https://developer.mozilla
+    .org/en-US/docs/Web/CSS">CSS</a></li>
+    <li><a href="https://developer.mozilla
+    .org/en-US/docs/Web/JavaScript">
+    JavaScript</a></li>
 </ol>
 ```
 

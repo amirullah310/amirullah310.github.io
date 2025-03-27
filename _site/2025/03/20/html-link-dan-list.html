@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Link dan Lists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
-    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+    <button class="hamburger" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -36,28 +37,33 @@
 </nav>
 
 <script>
-function toggleMenu() {
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.getElementById('navLinks');
-const links = navLinks.querySelectorAll('a');
-
-// ✅ Toggle saat hamburger diklik
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// ✅ Link di dalam navbar TIDAK menutup navbar
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.stopPropagation(); // Hindari efek toggle pas link diklik
-  });
-});
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('navLinks');
   
-}
-
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        // Toggle state pada hamburger dan menu
+        const isActive = navLinks.classList.contains('active');
+        
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isActive);
+      });
+  
+      // Tutup menu saat klik di luar area
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+  
 </script>
+
 
   <h1>HTML Link dan Lists</h1>
 <p>20 Mar 2025 </p>
@@ -89,7 +95,8 @@ links.forEach(link => {
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">href</code></strong> – Menentukan URL tujuan link.<br />
   <strong>Contoh:</strong>
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span><span class="nt">&gt;</span>Kunjungi Example<span class="nt">&lt;/a&gt;</span>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span><span class="nt">&gt;</span>
+  Kunjungi Example<span class="nt">&lt;/a&gt;</span>
 </code></pre></div>    </div>
   </li>
   <li><strong><code class="language-plaintext highlighter-rouge">target</code></strong> – Menentukan bagaimana link dibuka.<br />
@@ -102,14 +109,15 @@ links.forEach(link => {
     </ul>
 
     <p><strong>Contoh:</strong></p>
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span> 
+  <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>
   Buka di Tab Baru<span class="nt">&lt;/a&gt;</span>
 </code></pre></div>    </div>
   </li>
   <li><strong><code class="language-plaintext highlighter-rouge">title</code></strong> – Menampilkan keterangan saat kursor diarahkan ke link.<br />
   <strong>Contoh:</strong>
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">title=</span><span class="s">"Keterangan"</span><span class="nt">&gt;</span>Link dengan 
-  Keterangan<span class="nt">&lt;/a&gt;</span>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">title=</span><span class="s">"Keterangan"</span><span class="nt">&gt;</span>
+  Link dengan Keterangan<span class="nt">&lt;/a&gt;</span>
 </code></pre></div>    </div>
   </li>
   <li><strong><code class="language-plaintext highlighter-rouge">rel</code></strong> – Menentukan hubungan antara dokumen dengan link tujuan.<br />
@@ -121,15 +129,17 @@ links.forEach(link => {
     </ul>
 
     <p><strong>Contoh:</strong></p>
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span> <span class="na">target=</span><span class="s">"_blank"</span> 
-  <span class="na">rel=</span><span class="s">"nofollow noopener noreferrer"</span><span class="nt">&gt;</span>Kunjungi 
-  Example dengan Aman
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span>
+  <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">rel=</span><span class="s">"nofollow 
+  noopener noreferrer"</span><span class="nt">&gt;</span>
+  Kunjungi Example dengan Aman
   <span class="nt">&lt;/a&gt;</span>
 </code></pre></div>    </div>
   </li>
   <li><strong><code class="language-plaintext highlighter-rouge">download</code></strong> – Menginstruksikan browser untuk mengunduh file daripada membukanya.<br />
   <strong>Contoh:</strong>
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"file.pdf"</span> <span class="na">download</span><span class="nt">&gt;</span>Unduh File PDF<span class="nt">&lt;/a&gt;</span>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"file.pdf"</span> <span class="na">download</span><span class="nt">&gt;</span>
+  Unduh File PDF<span class="nt">&lt;/a&gt;</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -145,7 +155,8 @@ links.forEach(link => {
 </ul>
 
 <p><strong>Contoh:</strong></p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span> 
+<span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>
 Buka di Tab Baru<span class="nt">&lt;/a&gt;</span>
 </code></pre></div></div>
 <h3 id="d-nilai-untuk-atribut-rel"><strong>D. Nilai untuk Atribut <code class="language-plaintext highlighter-rouge">rel</code></strong></h3>
@@ -159,8 +170,10 @@ Buka di Tab Baru<span class="nt">&lt;/a&gt;</span>
 </ul>
 
 <p><strong>Contoh:</strong></p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span> <span class="na">target=</span><span class="s">"_blank"</span> 
-<span class="na">rel=</span><span class="s">"noopener noreferrer"</span><span class="nt">&gt;</span>Kunjungi Example dengan Aman
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.example.com"</span> 
+<span class="na">target=</span><span class="s">"_blank"</span> 
+<span class="na">rel=</span><span class="s">"noopener noreferrer"</span><span class="nt">&gt;</span>
+Kunjungi Example dengan Aman
 <span class="nt">&lt;/a&gt;</span>
 </code></pre></div></div>
 
@@ -251,12 +264,13 @@ Buka di Tab Baru<span class="nt">&lt;/a&gt;</span>
 <h4 id="contoh"><strong>Contoh:</strong></h4>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;</span>Daftar Teknologi Web<span class="nt">&lt;/h2&gt;</span>
 <span class="nt">&lt;ol&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://developer.mozilla.org/en-US/docs/Web/
-    HTML"</span><span class="nt">&gt;</span>HTML<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://developer.mozilla.org/en-US/docs/Web/
-    CSS"</span><span class="nt">&gt;</span>CSS<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://developer.mozilla.org/en-US/docs/Web/
-    JavaScript"</span><span class="nt">&gt;</span>JavaScript<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://developer.mozilla
+    .org/en-US/docs/Web/HTML"</span><span class="nt">&gt;</span>HTML<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://developer.mozilla
+    .org/en-US/docs/Web/CSS"</span><span class="nt">&gt;</span>CSS<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://developer.mozilla
+    .org/en-US/docs/Web/JavaScript"</span><span class="nt">&gt;</span>
+    JavaScript<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 <span class="nt">&lt;/ol&gt;</span>
 </code></pre></div></div>
 
@@ -265,5 +279,25 @@ Buka di Tab Baru<span class="nt">&lt;/a&gt;</span>
  <strong>Ordered List (<code class="language-plaintext highlighter-rouge">&lt;ol&gt;</code>)</strong> → Daftar terurut (menggunakan angka, huruf, atau simbol).<br />
  <strong>Unordered List (<code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code>)</strong> → Daftar tidak terurut (menggunakan bullet).</p>
   
+  <footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <p>&copy; 2025 Amirullah. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://github.com/amirullah310" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/amirullah" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/amirullah" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout dan Navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
-    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+    <button class="hamburger" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -36,37 +37,38 @@
 </nav>
 
 <script>
-function toggleMenu() {
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.getElementById('navLinks');
-const links = navLinks.querySelectorAll('a');
-
-// ✅ Toggle saat hamburger diklik
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// ✅ Link di dalam navbar TIDAK menutup navbar
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.stopPropagation(); // Hindari efek toggle pas link diklik
-  });
-});
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('navLinks');
   
-}
-
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        // Toggle state pada hamburger dan menu
+        const isActive = navLinks.classList.contains('active');
+        
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isActive);
+      });
+  
+      // Tutup menu saat klik di luar area
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+  
 </script>
+
 
   <h1>Layout dan Navigation</h1>
 <p>13 Mar 2025 </p>
 
 <p>Penjelasan tentang Layout dan Navigation</p>
-
-<p><img src="/assets/images/html-link-dan-lists.png" alt="Html Link dan Lists" /></p>
-
-<p>Sumber : Wikipedia</p>
 
 <h1 id="layout-dan-navigasi"><strong>Layout dan Navigasi</strong></h1>
 
@@ -281,9 +283,26 @@ links.forEach(link => {
   <li>Keduanya harus dirancang secara <strong>konsisten</strong> dan <strong>terintegrasi</strong> untuk menciptakan pengalaman pengguna yang optimal.</li>
 </ul>
 
-<hr />
-
-<p>💡 <strong>Jika ada pertanyaan atau butuh contoh tambahan, jangan ragu untuk bertanya!</strong> 😎</p>
   
+  <footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <p>&copy; 2025 Amirullah. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://github.com/amirullah310" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/amirullah" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/amirullah" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>

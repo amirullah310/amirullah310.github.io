@@ -1,7 +1,7 @@
 <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
-    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+    <button class="hamburger" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -19,25 +19,30 @@
 </nav>
 
 <script>
-function toggleMenu() {
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.getElementById('navLinks');
-const links = navLinks.querySelectorAll('a');
-
-// ✅ Toggle saat hamburger diklik
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// ✅ Link di dalam navbar TIDAK menutup navbar
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.stopPropagation(); // Hindari efek toggle pas link diklik
-  });
-});
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('navLinks');
   
-}
-
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        // Toggle state pada hamburger dan menu
+        const isActive = navLinks.classList.contains('active');
+        
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isActive);
+      });
+  
+      // Tutup menu saat klik di luar area
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+  
 </script>
+

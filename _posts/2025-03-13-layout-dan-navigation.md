@@ -6,10 +6,6 @@ title : "Layout dan Navigation"
 
 Penjelasan tentang Layout dan Navigation
 
-![Html Link dan Lists](/assets/images/html-link-dan-lists.png)
-
-Sumber : Wikipedia 
-
 # **Layout dan Navigasi**
 
 ## **1. Layout**
@@ -159,6 +155,3 @@ Navigasi adalah cara pengguna berpindah antar halaman atau bagian dalam sebuah a
 - **Navigasi** bertugas memandu pengguna untuk berpindah antar elemen dan menemukan informasi dengan mudah.  
 - Keduanya harus dirancang secara **konsisten** dan **terintegrasi** untuk menciptakan pengalaman pengguna yang optimal.  
 
----
-
-💡 **Jika ada pertanyaan atau butuh contoh tambahan, jangan ragu untuk bertanya!** 😎

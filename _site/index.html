@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
-    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+    <button class="hamburger" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -36,37 +37,37 @@
 </nav>
 
 <script>
-function toggleMenu() {
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.getElementById('navLinks');
-const links = navLinks.querySelectorAll('a');
-
-// ✅ Toggle saat hamburger diklik
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// ✅ Link di dalam navbar TIDAK menutup navbar
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.stopPropagation(); // Hindari efek toggle pas link diklik
-  });
-});
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('navLinks');
   
-}
-
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        // Toggle state pada hamburger dan menu
+        const isActive = navLinks.classList.contains('active');
+        
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isActive);
+      });
+  
+      // Tutup menu saat klik di luar area
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+  
 </script>
 
+
   <div class="container">
-   <!-- Foto Profil -->
-   <!-- <div class="profile">
-     <img src="assets/images/profile.jpg" alt="Foto Amirullah" class="profile-img">
-   </div> -->
- 
-   <!-- Nama -->
-   <h1>Nama: <span class="last_name">Amirullah</span></h1>
+  
+   <h1 class="nama">Halo, Saya <span class="last_name">Amirullah</span></h1>
  
    <!-- Deskripsi Diri -->
    <p>
@@ -77,38 +78,47 @@ links.forEach(link => {
      Sejak kecil, saya selalu terpesona oleh potensi teknologi untuk menciptakan perubahan positif dalam masyarakat.
      <br><br>
      Cita-cita saya adalah menjadi seorang programmer sukses yang dapat memberikan kontribusi berarti bagi dunia melalui karya-karya inovatif saya.
-     Saya berasal dari SMKN 1 Lhokseumawe, dan sekarang saya adalah seorang mahasiswa Politeknik Negeri Lhokseumawe.
    </p>
  
    <!-- Daftar Hobi -->
    <h2>🎯 Hobi Saya:</h2>
    <ul class="hobby-list">
      <li>🖌️ Menggambar</li>
-     <li>🏸 Bermain Bulutangkis</li>
+     <li>🏸 Bermain Bulutangkis</li>  
      <li>💻 Ngoding</li>
-     <li>📸 Fotografi</li>
    </ul>
+
+   <!-- Pendidikan -->
+   <h2>🎓 Pendidikan:</h2>
+   <ul class="education-list">
+     <li><strong>SDN 2 Blang Mangat</strong></li>
+     <li><strong>MTsN 2 Kota Lhokseumawe</strong></li>
+     <li><strong>SMKN 1 Kota Lhokseumawe</strong> – Rekayasa Perangkat Lunak (RPL)</li>
+   </ul>
+
  
-   <!-- Tombol Call to Action -->
-   <!-- <div class="cta">
-     <a href="#portfolio" class="btn-primary">Lihat Karya Saya</a>
-     <a href="#contact" class="btn-secondary">Hubungi Saya</a>
-   </div>
-  -->
-   <!-- Ikon Media Sosial -->
-   <!-- <div class="social-links">
-     <a href="https://github.com/amirullah310" target="_blank">
-       <img src="assets/images/github.png" alt="GitHub">
-     </a>
-     <a href="https://www.linkedin.com/in/amirullah310" target="_blank">
-       <img src="assets/images/linkedin.png" alt="LinkedIn">
-     </a>
-     <a href="https://www.instagram.com/amirullah310" target="_blank">
-       <img src="assets/images/instagram.png" alt="Instagram">
-     </a>
-   </div>
- </div> -->
- 
+</div>
+
   
+  <footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <p>&copy; 2025 Amirullah. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://github.com/amirullah310" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/amirullah" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/amirullah" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>

@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>friends</title>
+    <title>Friends</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
-    <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">
+    <button class="hamburger" aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -36,61 +37,173 @@
 </nav>
 
 <script>
-function toggleMenu() {
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.getElementById('navLinks');
-const links = navLinks.querySelectorAll('a');
-
-// ✅ Toggle saat hamburger diklik
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// ✅ Link di dalam navbar TIDAK menutup navbar
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.stopPropagation(); // Hindari efek toggle pas link diklik
-  });
-});
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('navLinks');
   
-}
-
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        // Toggle state pada hamburger dan menu
+        const isActive = navLinks.classList.contains('active');
+        
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', !isActive);
+      });
+  
+      // Tutup menu saat klik di luar area
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+  
 </script>
 
-  <h1 id="friends-page">Friends Page</h1>
 
-<p>Berikut ini adalah teman-teman saya di kelas:</p>
+  <h1 id="-friends-page">👥 Friends Page</h1>
+
+<h2 id="teman-teman-saya-di-kelas--">Teman-Teman Saya di Kelas  :</h2>
+
 <ol>
-  <li><a href="https://ahmadfayyadh.github.io/">Ahmad Fayyadh</a></li>
-  <li><a href="https://alanisamaharani.github.io/">Al Anisa Maharani</a></li>
-  <li><a href="https://alfaizakbar.github.io/">Al Faiz Akbar Thaib</a></li>
-  <li><a href="https://alisyateriana.github.io/">Alisya Teriana</a></li>
-  <li><a href="https://allysahumaira.github.io/">Allysa Humaira</a></li>
-  <li><a href="https://amirullah310.github.io/">Amirullah</a></li>
-  <li><a href="https://anandaaputrinabilla.github.io/">Ananda Putri Nabilla</a></li>
-  <li><a href="https://angginabilabatubara.github.io/">Anggi Syaban Nabila Batubara</a></li>
-  <li><a href="https://balqismisyia.github.io">Balqis Misyia</a></li>
-  <li><a href="https://darmawansahputra1.github.io/">Darmawan Sahputra</a></li>
-  <li><a href="https://dindaelz06.github.io/">Dinda Eliza</a></li>
-  <li><a href="https://fared08.github.io/">Farid Haiqal</a></li>
-  <li><a href="https://janricomaulanas.github.io/">Janrico Maulana Sofyan</a></li>
-  <li><a href="https://amharul.github.io/">M. Amharul Azhan</a></li>
-  <li><a href="https://mudaabrar.github.io/">Mohd. Muda Abrar</a></li>
-  <li><a href="https://muhammadalfaraby06.github.io/">Muhammad Alfaraby</a></li>
-  <li><a href="https://alfsdqi.github.io/">Muhammad Alif Sidqi</a></li>
-  <li><a href="https://khadafimuhammadnawwar.github.io/">Muhammad Nawwar Khadafi</a></li>
-  <li><a href="https://mraihanads.github.io/">Muhammad Raihan</a></li>
-  <li><a href="https://muhzakyyy.github.io/">Muhammad Zaky</a></li>
-  <li><a href="https://m-zakifahrezi.github.io/">Muhammad Zaky Fahrezi</a></li>
-  <li><a href="https://mutyaraassyifa.github.io/">Mutiara Assyifa</a></li>
-  <li><a href="https://najwaal-fajra.github.io/">Najwa Al Fajra</a></li>
-  <li><a href="https://nursitaaa.github.io/">Nursita</a></li>
-  <li><a href="https://rafi-i-habibi.github.io/">Rafii Habibi</a></li>
-  <li><a href="https://syahanalfatih.github.io/">Syahan Alfatih</a></li>
-  <li><a href="https://addairabi.github.io/">Teuku Ahmad Addairabi As Syafii</a></li>
+
+<li>
+    <a href="https://ahmadfayyadh.github.io/" target="_blank">Ahmad Fayyadh</a>
+</li>
+
+<li>
+    <a href="https://alanisamaharani.github.io/" target="_blank">Al Anisa Maharani</a>
+</li>
+
+<li>
+    <a href="https://alfaizakbar.github.io/" target="_blank">Al Faiz Akbar Thaib</a>
+</li>
+
+<li>
+    <a href="https://alisyateriana.github.io/" target="_blank">Alisya Teriana</a>
+</li>
+
+<li>
+    <a href="https://allysahumaira.github.io/" target="_blank">Allysa Humaira</a>
+</li>
+
+<li>
+    <a href="https://amirullah310.github.io/" target="_blank">Amirullah</a>
+</li>
+
+<li>
+    <a href="https://anandaaputrinabilla.github.io/" target="_blank">Ananda Putri Nabilla</a>
+</li>
+
+<li>
+    <a href="https://angginabilabatubara.github.io/" target="_blank">Anggi Syaban Nabila Batubara</a>
+</li>
+
+<li>
+    <a href="https://balqismisyia.github.io" target="_blank">Balqis Misyia</a>
+</li>
+
+<li>
+    <a href="https://cutyumnaassyifa22.github.io/cutyumnaaassyifa.github.io/" target="_blank">Cutyumna Assyifa</a>
+</li>
+
+<li>
+    <a href="https://darmawansahputra1.github.io/" target="_blank">Darmawan Sahputra</a>
+</li>
+
+<li>
+    <a href="https://dindaelz06.github.io/" target="_blank">Dinda Eliza</a>
+</li>
+
+<li>
+    <a href="https://fared08.github.io/" target="_blank">Farid Haiqal</a>
+</li>
+
+<li>
+    <a href="https://janricomaulanas.github.io/" target="_blank">Janrico Maulana Sofyan</a>
+</li>
+
+<li>
+    <a href="https://amharul.github.io/" target="_blank">M. Amharul Azhan</a>
+</li>
+
+<li>
+    <a href="https://mudaabrar.github.io/" target="_blank">Mohd. Muda Abrar</a>
+</li>
+
+<li>
+    <a href="https://muhammadalfaraby06.github.io/" target="_blank">Muhammad Alfaraby</a>
+</li>
+
+<li>
+    <a href="https://alfsdqi.github.io/" target="_blank">Muhammad Alif Sidqi</a>
+</li>
+
+<li>
+    <a href="https://khadafimuhammadnawwar.github.io/" target="_blank">Muhammad Nawwar Khadafi</a>
+</li>
+
+<li>
+    <a href="https://mraihanads.github.io/" target="_blank">Muhammad Raihan</a>
+</li>
+
+<li>
+    <a href="https://muhzakyyy.github.io/" target="_blank">Muhammad Zaky</a>
+</li>
+
+<li>
+    <a href="https://m-zakifahrezi.github.io/" target="_blank">Muhammad Zaky Fahrezi</a>
+</li>
+
+<li>
+    <a href="https://mutyaraassyifa.github.io/" target="_blank">Mutiara Assyifa</a>
+</li>
+
+<li>
+    <a href="https://najwaal-fajra.github.io/" target="_blank">Najwa Al Fajra</a>
+</li>
+
+<li>
+    <a href="https://nursitaaa.github.io/" target="_blank">Nursita</a>
+</li>
+
+<li>
+    <a href="https://rafi-i-habibi.github.io/" target="_blank">Rafii Habibi</a>
+</li>
+
+<li>
+    <a href="https://syahanalfatih.github.io/" target="_blank">Syahan Alfatih</a>
+</li>
+
+<li>
+    <a href="https://addairabi.github.io/" target="_blank">Teuku Ahmad Addairabi As Syafii</a>
+</li>
+
 </ol>
   
+  <footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <p>&copy; 2025 Amirullah. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://github.com/amirullah310" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/amirullah" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/amirullah" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>

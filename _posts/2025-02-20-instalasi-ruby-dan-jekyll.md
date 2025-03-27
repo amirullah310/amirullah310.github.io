@@ -6,18 +6,9 @@ title : "Instalasi Ruby dan Jekyll"
 
 Penjelasan tentang instalasi ruby dan jekyll
 
-![Html Link dan Lists](/assets/images/html-link-dan-lists.png)
-
-Sumber : Wikipedia 
-
-<p>  
-Berikut adalah <strong>panduan lengkap</strong> untuk <strong>instalasi dan konfigurasi Jekyll dengan GitHub Pages</strong> berdasarkan instruksi yang kamu berikan:  
-</p>
-
-
 ---
 
-## **1.2 Instalasi**  
+## **1. Instalasi**  
 ### a) **Install Ruby dan Jekyll**  
 1. **Cek apakah Ruby sudah terpasang**  
    Buka terminal atau Command Prompt, lalu ketik:  
@@ -73,7 +64,8 @@ Jika belum terpasang, install terlebih dahulu dengan <strong>MinGW</strong> (unt
 
 ### c) **Install Visual Studio Code**  
 1. **Download VSCode Installer**  
-   - Buka link berikut: [https://code.visualstudio.com](https://code.visualstudio.com)  
+   - Buka link berikut: [https://code 
+   .visualstudio.com](https://code.visualstudio.com)  
    - Pilih installer sesuai dengan sistem operasi (contoh: **64-bit untuk Windows**).  
 
 2. **Lakukan Instalasi**  
@@ -83,13 +75,14 @@ Jika belum terpasang, install terlebih dahulu dengan <strong>MinGW</strong> (unt
 
 ### d) **Install Google Chrome**  
 1. **Download Chrome Installer**  
-   - Buka link berikut: [https://www.google.com/ chrome](https://www.google.com/chrome)    
+   - Buka link berikut: [https://www.
+   google.com/chrome](https://www.google.com/chrome)    
    - Klik tombol **Download Chrome**.  
    - Ikuti instruksi instalasi hingga selesai.  
 
 ---
 
-## **1.3 Personal Web dengan Jekyll dan GitHub Pages**  
+## **2. Personal Web dengan Jekyll dan GitHub Pages**  
 ### **1. Buat Akun GitHub**  
 - Buka [https://github.com](https://github.com) dan daftar akun.  
 
@@ -110,7 +103,8 @@ Jika belum terpasang, install terlebih dahulu dengan <strong>MinGW</strong> (unt
 ### **3. Clone Repository ke Lokal**  
 Buka terminal atau Command Prompt, lalu jalankan:  
 ```bash
-git clone https://github.com/username/username.github.io.git
+git clone https://github.com/
+username/username.github.io.git
 ```
 **(Ganti `username` dengan username GitHub kamu)**  
 
@@ -153,8 +147,8 @@ Buat file baru bernama `index.html` di dalam folder proyek, lalu isi dengan kode
 </head>
 <body>
   <h1>Welcome to My Jekyll Site!</h1>
-  <p>This is a sample site created with Jekyll and 
-    GitHub Pages.</p>
+  <p>This is a sample site created with
+     Jekyll and GitHub Pages.</p>
 </body>
 </html>
 ```
@@ -229,7 +223,8 @@ jobs:
         run: bundle install
 
       - name: Build site
-        run: JEKYLL_ENV=production bundle exec jekyll build
+        run: JEKYLL_ENV=production bundle exec 
+        jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
