@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+  
+<body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
@@ -33,8 +35,14 @@
         </a>
       
     </div>
+    
+    <!-- Tombol Toggle Tema -->
+    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+      🌙
+    </button>
   </div>
 </nav>
+    
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -61,25 +69,62 @@
       });
     }
   });
+  // Theme toggle
+const toggleBtn = document.getElementById('themeToggle');
+
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Update icon
+  toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+};
+
+// Load theme on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+});
+
+toggleBtn.addEventListener('click', toggleTheme);
+
   
 </script>
 
 
-  <h1>Markdown</h1>
+
+  <div class="background-bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="main-container">
+    <h1>Markdown</h1>
 <p>06 Mar 2025 </p>
 
 <p>Penjelasan tentang markdown</p>
 
-<h1 id="-markdown-penjelasan-lengkap">📝 Markdown: Penjelasan Lengkap</h1>
+<h1 id="markdown-penjelasan-lengkap">Markdown: Penjelasan Lengkap</h1>
 
-<h2 id="-sejarah-markdown">🔎 Sejarah Markdown</h2>
+<h2 id="sejarah-markdown">Sejarah Markdown</h2>
 <p>
 Markdown pertama kali diperkenalkan oleh <strong>John Gruber</strong> dan <strong>Aaron Swartz</strong> pada tahun <strong>2004</strong>. Tujuannya adalah untuk membuat format teks yang dapat dibaca secara mudah oleh manusia, tetapi juga dapat dikonversi menjadi HTML secara otomatis. Filosofi utama Markdown adalah <strong>"mudah dibaca dan mudah ditulis."</strong>
 </p>
 
 <hr />
 
-<h2 id="-sintaks-dasar-markdown">📄 Sintaks Dasar Markdown</h2>
+<h2 id="sintaks-dasar-markdown">Sintaks Dasar Markdown</h2>
 <p>
 Markdown menggunakan simbol sederhana seperti <code>#</code>, <code>*</code>, <code>-</code>, dan <code>`</code> untuk memformat teks. Berikut adalah <strong>sintaks dasar</strong> dalam <strong>Markdown</strong>:
 </p>
@@ -127,7 +172,7 @@ Markdown menggunakan simbol sederhana seperti <code>#</code>, <code>*</code>, <c
 <hr />
 
 <h3 id="3-daftar-list">3. <strong>Daftar (List)</strong></h3>
-<h4 id="️-daftar-tak-berurutan-unordered-list">➡️ Daftar Tak Berurutan (Unordered List)</h4>
+<h4 id="daftar-tak-berurutan-unordered-list">Daftar Tak Berurutan (Unordered List)</h4>
 <p>Gunakan <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">+</code>, atau <code class="language-plaintext highlighter-rouge">*</code> diikuti dengan spasi:</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Item 1
@@ -149,7 +194,7 @@ Markdown menggunakan simbol sederhana seperti <code>#</code>, <code>*</code>, <c
   <li>Item 3</li>
 </ul>
 
-<h4 id="️-daftar-berurutan-ordered-list">➡️ Daftar Berurutan (Ordered List)</h4>
+<h4 id="daftar-berurutan-ordered-list">Daftar Berurutan (Ordered List)</h4>
 <p>Gunakan angka diikuti dengan titik (<code class="language-plaintext highlighter-rouge">.</code>):</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">1.</span> Item pertama
@@ -284,7 +329,7 @@ def hello():
 
 <hr />
 
-<h2 id="-contoh-penggunaan-markdown">🎯 Contoh Penggunaan Markdown</h2>
+<h2 id="contoh-penggunaan-markdown">Contoh Penggunaan Markdown</h2>
 <ol>
   <li><strong>Dokumentasi Kode</strong> – Digunakan di GitHub dan GitLab untuk README.md</li>
   <li><strong>Catatan</strong> – Digunakan untuk mencatat di aplikasi seperti Obsidian atau Notion</li>
@@ -294,22 +339,22 @@ def hello():
 
 <hr />
 
-<h2 id="-keunggulan-markdown">🌟 Keunggulan Markdown</h2>
-<p>✅ Mudah dipelajari dan digunakan<br />
-✅ Tidak memerlukan editor khusus<br />
-✅ File teks Markdown (<code class="language-plaintext highlighter-rouge">.md</code>) ringan dan mudah dipindahkan<br />
-✅ Didukung oleh banyak platform (GitHub, GitLab, Jupyter Notebook, dll.)</p>
+<h2 id="keunggulan-markdown">Keunggulan Markdown</h2>
+<p>Mudah dipelajari dan digunakan<br />
+Tidak memerlukan editor khusus<br />
+File teks Markdown (<code class="language-plaintext highlighter-rouge">.md</code>) ringan dan mudah dipindahkan<br />
+Didukung oleh banyak platform (GitHub, GitLab, Jupyter Notebook, dll.)</p>
 
 <hr />
 
-<h2 id="-keterbatasan-markdown">🚫 Keterbatasan Markdown</h2>
-<p>❌ Fitur format terbatas dibanding HTML/CSS<br />
-❌ Tidak semua platform mendukung semua fitur Markdown<br />
-❌ Kurang fleksibel untuk tata letak yang kompleks</p>
+<h2 id="keterbatasan-markdown">Keterbatasan Markdown</h2>
+<p>Fitur format terbatas dibanding HTML/CSS<br />
+Tidak semua platform mendukung semua fitur Markdown<br />
+Kurang fleksibel untuk tata letak yang kompleks</p>
 
 <hr />
 
-<h2 id="-varian-markdown">🏆 Varian Markdown</h2>
+<h2 id="varian-markdown">Varian Markdown</h2>
 <p>Beberapa platform menggunakan ekstensi atau varian Markdown untuk menambahkan fitur tambahan:</p>
 
 <ul>
@@ -320,19 +365,21 @@ def hello():
 
 <hr />
 
-<h2 id="-tips-dan-trik">💡 Tips dan Trik</h2>
-<p>✨ Gunakan ekstensi editor seperti <strong>Markdown Preview</strong> di VSCode untuk melihat hasil Markdown secara langsung.<br />
-✨ Tambahkan komentar di Markdown dengan <code class="language-plaintext highlighter-rouge">&lt;!-- komentar --&gt;</code> jika diperlukan.<br />
-✨ Gunakan GitHub Flavored Markdown (GFM) jika menulis untuk GitHub.</p>
+<h2 id="tips-dan-trik">Tips dan Trik</h2>
+<p>Gunakan ekstensi editor seperti <strong>Markdown Preview</strong> di VSCode untuk melihat hasil Markdown secara langsung.<br />
+Tambahkan komentar di Markdown dengan <code class="language-plaintext highlighter-rouge">&lt;!-- komentar --&gt;</code> jika diperlukan.<br />
+Gunakan GitHub Flavored Markdown (GFM) jika menulis untuk GitHub.</p>
 
 <hr />
 
-<h2 id="-kesimpulan">🚀 Kesimpulan</h2>
+<h2 id="kesimpulan">Kesimpulan</h2>
 <p>
 <strong>Markdown</strong> adalah bahasa markup ringan yang sangat berguna untuk menulis teks terformat dengan cara yang sederhana dan mudah dibaca. <strong>Fleksibilitas</strong> dan <strong>kesederhanaannya</strong> membuat <strong>Markdown</strong> menjadi pilihan populer di kalangan <strong>developer</strong>, <strong>penulis</strong>, dan <strong>content creator</strong>.
 </p>
 
-  
+
+  </div>
+
   <footer>
     <div class="footer-container">
         <div class="footer-content">
@@ -352,6 +399,7 @@ def hello():
     </div>
 </footer>
 
+</body>
 
 </body>
 </html>

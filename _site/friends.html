@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+  
+<body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
@@ -33,8 +35,14 @@
         </a>
       
     </div>
+    
+    <!-- Tombol Toggle Tema -->
+    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+      🌙
+    </button>
   </div>
 </nav>
+    
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -61,130 +69,210 @@
       });
     }
   });
+  // Theme toggle
+const toggleBtn = document.getElementById('themeToggle');
+
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Update icon
+  toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+};
+
+// Load theme on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+});
+
+toggleBtn.addEventListener('click', toggleTheme);
+
   
 </script>
 
 
-  <h1 id="-friends-page">👥 Friends Page</h1>
 
-<h2 id="teman-teman-saya-di-kelas--">Teman-Teman Saya di Kelas  :</h2>
+  <div class="background-bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
 
-<ol>
+  <div class="main-container">
+    <div class="friends-container">
+<h1 class="page-title">Friends Page</h1>
 
-<li>
-    <a href="https://ahmadfayyadh.github.io/" target="_blank">Ahmad Fayyadh</a>
-</li>
+<h2>Teman-Teman Saya di Kelas:</h2>
 
-<li>
-    <a href="https://alanisamaharani.github.io/" target="_blank">Al Anisa Maharani</a>
-</li>
+<!-- Fitur: Pencarian Teman -->
+<input type="text" id="searchInput" placeholder="Cari teman..." onkeyup="filterFriends()" class="friend-search" />
 
-<li>
-    <a href="https://alfaizakbar.github.io/" target="_blank">Al Faiz Akbar Thaib</a>
-</li>
+<!-- Pesan jika tidak ada teman yang ditemukan -->
+<p id="noResults" class="no-results-message" style="display: none;">Nama tidak ditemukan</p>
 
-<li>
-    <a href="https://alisyateriana.github.io/" target="_blank">Alisya Teriana</a>
-</li>
-
-<li>
-    <a href="https://allysahumaira.github.io/" target="_blank">Allysa Humaira</a>
-</li>
-
-<li>
-    <a href="https://amirullah310.github.io/" target="_blank">Amirullah</a>
-</li>
-
-<li>
-    <a href="https://anandaaputrinabilla.github.io/" target="_blank">Ananda Putri Nabilla</a>
-</li>
-
-<li>
-    <a href="https://angginabilabatubara.github.io/" target="_blank">Anggi Syaban Nabila Batubara</a>
-</li>
-
-<li>
-    <a href="https://balqismisyia.github.io" target="_blank">Balqis Misyia</a>
-</li>
-
-<li>
-    <a href="https://cutyumnaassyifa22.github.io/" target="_blank">Cutyumna Assyifa</a>
-</li>
-
-<li>
-    <a href="https://darmawansahputra1.github.io/" target="_blank">Darmawan Sahputra</a>
-</li>
-
-<li>
-    <a href="https://dindaelz06.github.io/" target="_blank">Dinda Eliza</a>
-</li>
-
-<li>
-    <a href="https://fared08.github.io/" target="_blank">Farid Haiqal</a>
-</li>
-
-<li>
-    <a href="https://janricomaulanas.github.io/" target="_blank">Janrico Maulana Sofyan</a>
-</li>
-
-<li>
-    <a href="https://amharul.github.io/" target="_blank">M. Amharul Azhan</a>
-</li>
-
-<li>
-    <a href="https://mudaabrar.github.io/" target="_blank">Mohd. Muda Abrar</a>
-</li>
-
-<li>
-    <a href="https://muhammadalfaraby06.github.io/" target="_blank">Muhammad Alfaraby</a>
-</li>
-
-<li>
-    <a href="https://alfsdqi.github.io/" target="_blank">Muhammad Alif Sidqi</a>
-</li>
-
-<li>
-    <a href="https://khadafimuhammadnawwar.github.io/" target="_blank">Muhammad Nawwar Khadafi</a>
-</li>
-
-<li>
-    <a href="https://mraihanads.github.io/" target="_blank">Muhammad Raihan</a>
-</li>
-
-<li>
-    <a href="https://muhzakyyy.github.io/" target="_blank">Muhammad Zaky</a>
-</li>
-
-<li>
-    <a href="https://m-zakifahrezi.github.io/" target="_blank">Muhammad Zaky Fahrezi</a>
-</li>
-
-<li>
-    <a href="https://mutyaraassyifa.github.io/" target="_blank">Mutiara Assyifa</a>
-</li>
-
-<li>
-    <a href="https://najwaal-fajra.github.io/" target="_blank">Najwa Al Fajra</a>
-</li>
-
-<li>
-    <a href="https://nursitaaa.github.io/" target="_blank">Nursita</a>
-</li>
-
-<li>
-    <a href="https://rafi-i-habibi.github.io/" target="_blank">Rafii Habibi</a>
-</li>
-
-<li>
-    <a href="https://syahanalfatih.github.io/" target="_blank">Syahan Alfatih</a>
-</li>
-
-<li>
-    <a href="https://addairabi.github.io/" target="_blank">Teuku Ahmad Addairabi As Syafii</a>
-</li>
-
-</ol>
+<ol id="friendList" class="friends-list">
   
+    <li class="friend-card">
+      <a href="https://ahmadfayyadh.github.io/" target="_blank">Ahmad Fayyadh</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://alanisamaharani.github.io/" target="_blank">Al Anisa Maharani</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://alfaizakbar.github.io/" target="_blank">Al Faiz Akbar Thaib</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://alisyateriana.github.io/" target="_blank">Alisya Teriana</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://allysahumaira.github.io/" target="_blank">Allysa Humaira</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://amirullah310.github.io/" target="_blank">Amirullah</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://anandaaputrinabilla.github.io/" target="_blank">Ananda Putri Nabilla</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://angginabilabatubara.github.io/" target="_blank">Anggi Syaban Nabila Batubara</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://balqismisyia.github.io" target="_blank">Balqis Misyia</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://cutyumnaassyifa22.github.io/" target="_blank">Cutyumna Assyifa</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://darmawansahputra1.github.io/" target="_blank">Darmawan Sahputra</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://dindaelz06.github.io/" target="_blank">Dinda Eliza</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://fared08.github.io/" target="_blank">Farid Haiqal</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://janricomaulanas.github.io/" target="_blank">Janrico Maulana Sofyan</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://amharul.github.io/" target="_blank">M. Amharul Azhan</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://mudaabrar.github.io/" target="_blank">Mohd. Muda Abrar</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://muhammadalfaraby06.github.io/" target="_blank">Muhammad Alfaraby</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://alfsdqi.github.io/" target="_blank">Muhammad Alif Sidqi</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://khadafimuhammadnawwar.github.io/" target="_blank">Muhammad Nawwar Khadafi</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://mraihanads.github.io/" target="_blank">Muhammad Raihan</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://muhzakyyy.github.io/" target="_blank">Muhammad Zaky</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://m-zakifahrezi.github.io/" target="_blank">Muhammad Zaky Fahrezi</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://mutyaraassyifa.github.io/" target="_blank">Mutiara Assyifa</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://najwaal-fajra.github.io/" target="_blank">Najwa Al Fajra</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://nursitaaa.github.io/" target="_blank">Nursita</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://rafi-i-habibi.github.io/" target="_blank">Rafii Habibi</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://syahanalfatih.github.io/" target="_blank">Syahan Alfatih</a>
+    </li>
+  
+    <li class="friend-card">
+      <a href="https://addairabi.github.io/" target="_blank">Teuku Ahmad Addairabi As Syafii</a>
+    </li>
+  
+</ol>
+</div>
+
+<script>
+  function filterFriends() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const list = document.getElementById('friendList');
+    const items = list.getElementsByTagName('li');
+    let found = false;
+
+    // Menyembunyikan semua teman
+    for (let i = 0; i < items.length; i++) {
+      const a = items[i].getElementsByTagName("a")[0];
+      const txtValue = a.textContent || a.innerText;
+      // Menampilkan hanya teman yang cocok
+      if (txtValue.toLowerCase().includes(filter)) {
+        items[i].style.display = "";
+        found = true;
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+
+    // Menampilkan atau menyembunyikan pesan "Nama tidak ditemukan"
+    const noResultsMessage = document.getElementById('noResults');
+    if (found === false && filter !== "") {
+      noResultsMessage.style.display = "block"; // Tampilkan pesan
+    } else {
+      noResultsMessage.style.display = "none"; // Sembunyikan pesan
+    }
+  }
+  
+</script>
+
+
+  </div>
+
   <footer>
     <div class="footer-container">
         <div class="footer-content">
@@ -204,6 +292,7 @@
     </div>
 </footer>
 
+</body>
 
 </body>
 </html>

@@ -135,22 +135,22 @@ Navigasi adalah cara pengguna berpindah antar halaman atau bagian dalam sebuah a
 ---
 
 ### **Contoh Praktis Navigasi yang Efektif**
-✅ Gunakan **highlight** pada menu yang sedang aktif untuk menunjukkan posisi pengguna.  
-✅ Berikan **ikon pendukung** untuk memudahkan pemahaman.  
-✅ Gunakan **hover effect** dan **animation** ringan untuk memberikan feedback.  
-✅ Pastikan **menu dropdown** dapat diakses dengan cepat tanpa keterlambatan.  
-✅ Pastikan navigasi **responsif** pada semua perangkat (desktop, tablet, dan mobile).  
+Gunakan **highlight** pada menu yang sedang aktif untuk menunjukkan posisi pengguna.  
+Berikan **ikon pendukung** untuk memudahkan pemahaman.  
+Gunakan **hover effect** dan **animation** ringan untuk memberikan feedback.  
+Pastikan **menu dropdown** dapat diakses dengan cepat tanpa keterlambatan.  
+Pastikan navigasi **responsif** pada semua perangkat (desktop, tablet, dan mobile).  
 
 ---
 
-## **➡️ Hubungan Antara Layout dan Navigasi**
+## **Hubungan Antara Layout dan Navigasi**
 - **Layout** menentukan bagaimana elemen navigasi akan ditempatkan dalam antarmuka.  
 - **Navigasi** memungkinkan pengguna untuk berpindah antar elemen yang telah diatur dalam layout.  
 - Kombinasi layout yang rapi dan navigasi yang intuitif menciptakan **pengalaman pengguna (UX) yang lancar** dan meningkatkan **konversi**.  
 
 ---
 
-## 🎯 **Kesimpulan**
+## **Kesimpulan**
 - **Layout** berfokus pada pengaturan elemen visual untuk menciptakan struktur yang rapi dan menarik.  
 - **Navigasi** bertugas memandu pengguna untuk berpindah antar elemen dan menemukan informasi dengan mudah.  
 - Keduanya harus dirancang secara **konsisten** dan **terintegrasi** untuk menciptakan pengalaman pengguna yang optimal.  

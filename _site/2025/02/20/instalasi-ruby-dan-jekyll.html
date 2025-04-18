@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+  
+<body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
@@ -33,8 +35,14 @@
         </a>
       
     </div>
+    
+    <!-- Tombol Toggle Tema -->
+    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+      🌙
+    </button>
   </div>
 </nav>
+    
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -61,11 +69,48 @@
       });
     }
   });
+  // Theme toggle
+const toggleBtn = document.getElementById('themeToggle');
+
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Update icon
+  toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+};
+
+// Load theme on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+});
+
+toggleBtn.addEventListener('click', toggleTheme);
+
   
 </script>
 
 
-  <h1>Instalasi Ruby dan Jekyll</h1>
+
+  <div class="background-bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="main-container">
+    <h1>Instalasi Ruby dan Jekyll</h1>
 <p>20 Feb 2025 </p>
 
 <p>Penjelasan tentang instalasi ruby dan jekyll</p>
@@ -250,7 +295,7 @@ username/username.github.io.git
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:4000
 </code></pre></div></div>
 
-<p>💡 <strong>Tips:</strong> Jika ingin hasil perubahan otomatis terlihat di browser, jalankan dengan:</p>
+<p><strong>Tips:</strong> Jika ingin hasil perubahan otomatis terlihat di browser, jalankan dengan:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve <span class="nt">--livereload</span>
 </code></pre></div></div>
 
@@ -325,7 +370,7 @@ git push origin main
 
 <hr />
 
-<h3 id="-selesai">✅ <strong>Selesai!</strong></h3>
+<h3 id="selesai"><strong>Selesai!</strong></h3>
 <p>Sekarang website kamu bisa diakses di:</p>
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://username.github.io
 </code></pre></div></div>
@@ -333,7 +378,7 @@ git push origin main
 
 <hr />
 
-<p>💡 <strong>Troubleshooting:</strong></p>
+<p><strong>Troubleshooting:</strong></p>
 <ul>
   <li>Jika terjadi error karena <strong>port konflik</strong>, jalankan dengan perintah berikut:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve <span class="nt">--host</span> 0.0.0.0 <span class="nt">--port</span> 4001
@@ -343,7 +388,9 @@ git push origin main
   <li>Jika GitHub Pages tidak memuat, pastikan branch utama sudah diatur ke <code class="language-plaintext highlighter-rouge">main</code> di pengaturan repository.</li>
 </ul>
 
-  
+
+  </div>
+
   <footer>
     <div class="footer-container">
         <div class="footer-content">
@@ -363,6 +410,7 @@ git push origin main
     </div>
 </footer>
 
+</body>
 
 </body>
 </html>

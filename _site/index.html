@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+  
+<body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
@@ -33,8 +35,14 @@
         </a>
       
     </div>
+    
+    <!-- Tombol Toggle Tema -->
+    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+      🌙
+    </button>
   </div>
 </nav>
+    
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -61,13 +69,48 @@
       });
     }
   });
+  // Theme toggle
+const toggleBtn = document.getElementById('themeToggle');
+
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Update icon
+  toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+};
+
+// Load theme on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+});
+
+toggleBtn.addEventListener('click', toggleTheme);
+
   
 </script>
 
 
-  <div class="container">
-  
-   <h1 class="nama">Halo, Saya <span class="last_name">Amirullah</span></h1>
+
+  <div class="background-bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="main-container">
+       <h1 class="nama">Halo, Saya <span class="last_name">Amirullah</span></h1>
  
    <!-- Deskripsi Diri -->
    <p>
@@ -81,25 +124,25 @@
    </p>
  
    <!-- Daftar Hobi -->
-   <h2>🎯 Hobi Saya:</h2>
+   <h2>Hobi Saya:</h2>
    <ul class="hobby-list">
-     <li>🖌️ Menggambar</li>
-     <li>🏸 Bermain Bulutangkis</li>  
-     <li>💻 Ngoding</li>
+     <li>Menggambar</li>
+     <li>Bermain Bulutangkis</li>  
+     <li>Ngoding</li>
    </ul>
 
    <!-- Pendidikan -->
-   <h2>🎓 Pendidikan:</h2>
+   <h2>Pendidikan:</h2>
    <ul class="education-list">
      <li><strong>SDN 2 Blang Mangat</strong></li>
      <li><strong>MTsN 2 Kota Lhokseumawe</strong></li>
      <li><strong>SMKN 1 Kota Lhokseumawe</strong> – Rekayasa Perangkat Lunak (RPL)</li>
    </ul>
 
- 
-</div>
 
-  
+
+  </div>
+
   <footer>
     <div class="footer-container">
         <div class="footer-content">
@@ -119,6 +162,7 @@
     </div>
 </footer>
 
+</body>
 
 </body>
 </html>

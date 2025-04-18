@@ -169,7 +169,7 @@ Cek di browser:
 http://localhost:4000
 ```
 
-💡 **Tips:** Jika ingin hasil perubahan otomatis terlihat di browser, jalankan dengan:  
+**Tips:** Jika ingin hasil perubahan otomatis terlihat di browser, jalankan dengan:  
 ```bash
 jekyll serve --livereload
 ```
@@ -243,7 +243,7 @@ git push origin main
 
 ---
 
-### ✅ **Selesai!**  
+### **Selesai!**  
 Sekarang website kamu bisa diakses di:  
 ```text
 https://username.github.io
@@ -252,7 +252,7 @@ https://username.github.io
 
 ---
 
-💡 **Troubleshooting:**
+**Troubleshooting:**
 - Jika terjadi error karena **port konflik**, jalankan dengan perintah berikut:  
 ```bash
 jekyll serve --host 0.0.0.0 --port 4001

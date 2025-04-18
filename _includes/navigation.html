@@ -15,8 +15,14 @@
         </a>
       {% endfor %}
     </div>
+    
+    <!-- Tombol Toggle Tema -->
+    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+      🌙
+    </button>
   </div>
 </nav>
+    
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -43,6 +49,28 @@
       });
     }
   });
+  // Theme toggle
+const toggleBtn = document.getElementById('themeToggle');
+
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Update icon
+  toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+};
+
+// Load theme on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+});
+
+toggleBtn.addEventListener('click', toggleTheme);
+
   
 </script>
 

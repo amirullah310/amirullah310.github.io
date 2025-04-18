@@ -1,1 +1,39 @@
-url : 'https://amirullah310.github.io/'
+# === Informasi Dasar Situs ===
+title: Amirullah310's Blog
+description: Personal blog powered by Jekyll and GitHub Pages
+url: 'https://amirullah310.github.io'  # URL utama situs
+baseurl: ''  # Kosongkan jika di-root domain GitHub Pages
+
+# === Info Penulis ===
+author:
+  name: Amirullah
+  email: amirullah.lsm99@gmail.com
+
+# === Navigasi dan Data ===
+# Folder _data dan _includes digunakan, jadi pastikan ini ada
+collections:
+  posts:
+    output: true
+
+# === Plugin ===
+plugins:
+  - jekyll-feed         # RSS Feed
+  - jekyll-seo-tag      # SEO meta tags
+  - jekyll-sitemap      # Sitemap.xml
+  - jekyll-paginate     # Pagination support
+
+# === File yang tidak perlu dibuild ===
+exclude:
+  - node_modules
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - jekyll-cache
+  - .github
+  - .vscode
+
+# === SEO & Sosial (opsional) ===
+social_links:
+  github: https://github.com/amirullah310
+  linkedin: https://www.linkedin.com/in/amirullah310/
+  twitter: https://twitter.com/amirullah310

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+  
+<body>
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
@@ -33,8 +35,14 @@
         </a>
       
     </div>
+    
+    <!-- Tombol Toggle Tema -->
+    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+      🌙
+    </button>
   </div>
 </nav>
+    
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -61,11 +69,48 @@
       });
     }
   });
+  // Theme toggle
+const toggleBtn = document.getElementById('themeToggle');
+
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Update icon
+  toggleBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+};
+
+// Load theme on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+});
+
+toggleBtn.addEventListener('click', toggleTheme);
+
   
 </script>
 
 
-  <h1>Layout dan Navigation</h1>
+
+  <div class="background-bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="main-container">
+    <h1>Layout dan Navigation</h1>
 <p>13 Mar 2025 </p>
 
 <p>Penjelasan tentang Layout dan Navigation</p>
@@ -259,15 +304,15 @@
 <hr />
 
 <h3 id="contoh-praktis-navigasi-yang-efektif"><strong>Contoh Praktis Navigasi yang Efektif</strong></h3>
-<p>✅ Gunakan <strong>highlight</strong> pada menu yang sedang aktif untuk menunjukkan posisi pengguna.<br />
-✅ Berikan <strong>ikon pendukung</strong> untuk memudahkan pemahaman.<br />
-✅ Gunakan <strong>hover effect</strong> dan <strong>animation</strong> ringan untuk memberikan feedback.<br />
-✅ Pastikan <strong>menu dropdown</strong> dapat diakses dengan cepat tanpa keterlambatan.<br />
-✅ Pastikan navigasi <strong>responsif</strong> pada semua perangkat (desktop, tablet, dan mobile).</p>
+<p>Gunakan <strong>highlight</strong> pada menu yang sedang aktif untuk menunjukkan posisi pengguna.<br />
+Berikan <strong>ikon pendukung</strong> untuk memudahkan pemahaman.<br />
+Gunakan <strong>hover effect</strong> dan <strong>animation</strong> ringan untuk memberikan feedback.<br />
+Pastikan <strong>menu dropdown</strong> dapat diakses dengan cepat tanpa keterlambatan.<br />
+Pastikan navigasi <strong>responsif</strong> pada semua perangkat (desktop, tablet, dan mobile).</p>
 
 <hr />
 
-<h2 id="️-hubungan-antara-layout-dan-navigasi"><strong>➡️ Hubungan Antara Layout dan Navigasi</strong></h2>
+<h2 id="hubungan-antara-layout-dan-navigasi"><strong>Hubungan Antara Layout dan Navigasi</strong></h2>
 <ul>
   <li><strong>Layout</strong> menentukan bagaimana elemen navigasi akan ditempatkan dalam antarmuka.</li>
   <li><strong>Navigasi</strong> memungkinkan pengguna untuk berpindah antar elemen yang telah diatur dalam layout.</li>
@@ -276,14 +321,16 @@
 
 <hr />
 
-<h2 id="-kesimpulan">🎯 <strong>Kesimpulan</strong></h2>
+<h2 id="kesimpulan"><strong>Kesimpulan</strong></h2>
 <ul>
   <li><strong>Layout</strong> berfokus pada pengaturan elemen visual untuk menciptakan struktur yang rapi dan menarik.</li>
   <li><strong>Navigasi</strong> bertugas memandu pengguna untuk berpindah antar elemen dan menemukan informasi dengan mudah.</li>
   <li>Keduanya harus dirancang secara <strong>konsisten</strong> dan <strong>terintegrasi</strong> untuk menciptakan pengalaman pengguna yang optimal.</li>
 </ul>
 
-  
+
+  </div>
+
   <footer>
     <div class="footer-container">
         <div class="footer-content">
@@ -303,6 +350,7 @@
     </div>
 </footer>
 
+</body>
 
 </body>
 </html>
