@@ -17,9 +17,15 @@
     </div>
     
     <!-- Tombol Toggle Tema -->
-    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
-      🌙
-    </button>
+<!-- Tombol Toggle Tema dan Waktu -->
+<div class="nav-tools">
+  <div id="datetime" class="datetime"></div> <!-- Ini tempat waktu realtime -->
+  |
+  <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+    🌙
+  </button>
+</div>
+
   </div>
 </nav>
     
@@ -72,5 +78,23 @@ window.addEventListener('DOMContentLoaded', () => {
 toggleBtn.addEventListener('click', toggleTheme);
 
   
+
+// Sudah ada script hamburger dan theme toggle di atas...
+
+// Script Tanggal dan Waktu Realtime
+function updateDateTime() {
+  const now = new Date();
+  const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+  const day = days[now.getDay()];
+  const date = now.toLocaleDateString('id-ID');
+  const time = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  document.getElementById('datetime').textContent = `${day}, ${date} ${time}`;
+}
+
+// Update setiap detik
+setInterval(updateDateTime, 1000);
+updateDateTime(); // Panggil pertama kali agar tidak delay
+
+
 </script>
 

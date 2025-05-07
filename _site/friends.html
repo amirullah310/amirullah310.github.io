@@ -5,9 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+      <!-- AOS Library CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <!-- Javascript -->
+    <script src="/assets/js/scripts.js"></script>
+    
+
+
+
+    <!-- plugins -->
+     <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Amirullah310&apos;s Blog" />
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Friends | Amirullah310’s Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Friends" />
+<meta name="author" content="Amirullah" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal blog powered by Jekyll and GitHub Pages" />
+<meta property="og:description" content="Personal blog powered by Jekyll and GitHub Pages" />
+<link rel="canonical" href="http://localhost:4000/friends.html" />
+<meta property="og:url" content="http://localhost:4000/friends.html" />
+<meta property="og:site_name" content="Amirullah310’s Blog" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Friends" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Amirullah"},"description":"Personal blog powered by Jekyll and GitHub Pages","headline":"Friends","url":"http://localhost:4000/friends.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 </head>
-<body>
   
 <body>
   <nav id="navbar">
@@ -37,9 +72,15 @@
     </div>
     
     <!-- Tombol Toggle Tema -->
-    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
-      🌙
-    </button>
+<!-- Tombol Toggle Tema dan Waktu -->
+<div class="nav-tools">
+  <div id="datetime" class="datetime"></div> <!-- Ini tempat waktu realtime -->
+  |
+  <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+    🌙
+  </button>
+</div>
+
   </div>
 </nav>
     
@@ -92,6 +133,24 @@ window.addEventListener('DOMContentLoaded', () => {
 toggleBtn.addEventListener('click', toggleTheme);
 
   
+
+// Sudah ada script hamburger dan theme toggle di atas...
+
+// Script Tanggal dan Waktu Realtime
+function updateDateTime() {
+  const now = new Date();
+  const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+  const day = days[now.getDay()];
+  const date = now.toLocaleDateString('id-ID');
+  const time = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  document.getElementById('datetime').textContent = `${day}, ${date} ${time}`;
+}
+
+// Update setiap detik
+setInterval(updateDateTime, 1000);
+updateDateTime(); // Panggil pertama kali agar tidak delay
+
+
 </script>
 
 
@@ -111,132 +170,143 @@ toggleBtn.addEventListener('click', toggleTheme);
 
   <div class="main-container">
     <div class="friends-container">
-<h1 class="page-title">Friends Page</h1>
 
-<h2>Teman-Teman Saya di Kelas:</h2>
+  <h1 class="page-title">Friends Page</h1>
 
-<!-- Fitur: Pencarian Teman -->
-<input type="text" id="searchInput" placeholder="Cari teman..." onkeyup="filterFriends()" class="friend-search" />
+  <!-- Deskripsi Halaman -->
+  <p class="page-description">
+    Selamat datang di halaman teman-teman saya! Halaman ini berfungsi sebagai daftar teman-teman saya yang berada di kelas. Anda dapat mencari teman dengan cepat menggunakan fitur pencarian di bawah ini. Cukup ketik nama teman yang ingin Anda cari, dan hasil yang relevan akan muncul otomatis.
+  </p>
+      <p class="page-note">
+    Anda dapat mengklik nama teman untuk melihat lebih banyak informasi mengenai mereka atau untuk mengunjungi halaman profil mereka.
+  </p>
 
-<!-- Pesan jika tidak ada teman yang ditemukan -->
+  <h2 class="h2">Teman-Teman Saya di Kelas:</h2>
+  </div>
+
+<p><!-- Fitur: Pencarian Teman -->
+  <input type="text" id="searchInput" placeholder="Cari teman..." onkeyup="filterFriends()" class="friend-search" /></p>
+
+<p><!-- Pesan jika tidak ada teman yang ditemukan --></p>
 <p id="noResults" class="no-results-message" style="display: none;">Nama tidak ditemukan</p>
 
 <ol id="friendList" class="friends-list">
-  
-    <li class="friend-card">
-      <a href="https://ahmadfayyadh.github.io/" target="_blank">Ahmad Fayyadh</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://alanisamaharani.github.io/" target="_blank">Al Anisa Maharani</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://alfaizakbar.github.io/" target="_blank">Al Faiz Akbar Thaib</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://alisyateriana.github.io/" target="_blank">Alisya Teriana</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://allysahumaira.github.io/" target="_blank">Allysa Humaira</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://amirullah310.github.io/" target="_blank">Amirullah</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://anandaaputrinabilla.github.io/" target="_blank">Ananda Putri Nabilla</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://angginabilabatubara.github.io/" target="_blank">Anggi Syaban Nabila Batubara</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://balqismisyia.github.io" target="_blank">Balqis Misyia</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://cutyumnaassyifa22.github.io/" target="_blank">Cutyumna Assyifa</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://darmawansahputra1.github.io/" target="_blank">Darmawan Sahputra</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://dindaelz06.github.io/" target="_blank">Dinda Eliza</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://fared08.github.io/" target="_blank">Farid Haiqal</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://janricomaulanas.github.io/" target="_blank">Janrico Maulana Sofyan</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://amharul.github.io/" target="_blank">M. Amharul Azhan</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://mudaabrar.github.io/" target="_blank">Mohd. Muda Abrar</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://muhammadalfaraby06.github.io/" target="_blank">Muhammad Alfaraby</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://alfsdqi.github.io/" target="_blank">Muhammad Alif Sidqi</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://khadafimuhammadnawwar.github.io/" target="_blank">Muhammad Nawwar Khadafi</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://mraihanads.github.io/" target="_blank">Muhammad Raihan</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://muhzakyyy.github.io/" target="_blank">Muhammad Zaky</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://m-zakifahrezi.github.io/" target="_blank">Muhammad Zaky Fahrezi</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://mutyaraassyifa.github.io/" target="_blank">Mutiara Assyifa</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://najwaal-fajra.github.io/" target="_blank">Najwa Al Fajra</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://nursitaaa.github.io/" target="_blank">Nursita</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://rafi-i-habibi.github.io/" target="_blank">Rafii Habibi</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://syahanalfatih.github.io/" target="_blank">Syahan Alfatih</a>
-    </li>
-  
-    <li class="friend-card">
-      <a href="https://addairabi.github.io/" target="_blank">Teuku Ahmad Addairabi As Syafii</a>
-    </li>
-  
-</ol>
-</div>
+    
+      <li class="friend-card">
+        <a href="https://ahmadfayyadh.github.io/" target="_blank">Ahmad Fayyadh</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://alanisamaharani.github.io/" target="_blank">Al Anisa Maharani</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://alfaizakbar.github.io/" target="_blank">Al Faiz Akbar Thaib</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://alisyateriana.github.io/" target="_blank">Alisya Teriana</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://allysahumaira.github.io/" target="_blank">Allysa Humaira</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://amirullah310.github.io/" target="_blank">Amirullah</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://anandaaputrinabilla.github.io/" target="_blank">Ananda Putri Nabilla</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://angginabilabatubara.github.io/" target="_blank">Anggi Syaban Nabila Batubara</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://balqismisyia.github.io" target="_blank">Balqis Misyia</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://cutyumnaassyifa22.github.io/" target="_blank">Cutyumna Assyifa</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://darmawansahputra1.github.io/" target="_blank">Darmawan Sahputra</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://dindaelz06.github.io/" target="_blank">Dinda Eliza</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://fared08.github.io/" target="_blank">Farid Haiqal</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://janricomaulanas.github.io/" target="_blank">Janrico Maulana Sofyan</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://amharul.github.io/" target="_blank">M. Amharul Azhan</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://mudaabrar.github.io/" target="_blank">Mohd. Muda Abrar</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://muhammadalfaraby06.github.io/" target="_blank">Muhammad Alfaraby</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://alfsdqi.github.io/" target="_blank">Muhammad Alif Sidqi</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://khadafimuhammadnawwar.github.io/" target="_blank">Muhammad Nawwar Khadafi</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://mraihanads.github.io/" target="_blank">Muhammad Raihan</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://muhzakyyy.github.io/" target="_blank">Muhammad Zaky</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://m-zakifahrezi.github.io/" target="_blank">Muhammad Zaky Fahrezi</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://mutyaraassyifa.github.io/" target="_blank">Mutiara Assyifa</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://najwaal-fajra.github.io/" target="_blank">Najwa Al Fajra</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://nursitaaa.github.io/" target="_blank">Nursita</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://rafi-i-habibi.github.io/" target="_blank">Rafii Habibi</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://syahanalfatih.github.io/" target="_blank">Syahan Alfatih</a>
+      </li>
+    
+      <li class="friend-card">
+        <a href="https://addairabi.github.io/" target="_blank">Teuku Ahmad Addairabi As Syafii</a>
+      </li>
+    
+  </ol>
+
+<p><!-- Catatan Penggunaan --></p>
 
 <script>
   function filterFriends() {
@@ -267,7 +337,6 @@ toggleBtn.addEventListener('click', toggleTheme);
       noResultsMessage.style.display = "none"; // Sembunyikan pesan
     }
   }
-  
 </script>
 
 
@@ -292,7 +361,9 @@ toggleBtn.addEventListener('click', toggleTheme);
     </div>
 </footer>
 
-</body>
+
+
+
 
 </body>
 </html>

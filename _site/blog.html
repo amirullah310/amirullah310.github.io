@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+      <!-- AOS Library CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.ico">
+
+    <!-- Javascript -->
+    <script src="/assets/js/scripts.js"></script>
+    
+
+
+
+    <!-- plugins -->
+     <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Amirullah310&apos;s Blog" />
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Blog | Amirullah310’s Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Blog" />
+<meta name="author" content="Amirullah" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal blog powered by Jekyll and GitHub Pages" />
+<meta property="og:description" content="Personal blog powered by Jekyll and GitHub Pages" />
+<link rel="canonical" href="http://localhost:4000/blog.html" />
+<meta property="og:url" content="http://localhost:4000/blog.html" />
+<meta property="og:site_name" content="Amirullah310’s Blog" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Blog" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Amirullah"},"description":"Personal blog powered by Jekyll and GitHub Pages","headline":"Blog","url":"http://localhost:4000/blog.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 </head>
-<body>
   
 <body>
   <nav id="navbar">
@@ -37,9 +72,15 @@
     </div>
     
     <!-- Tombol Toggle Tema -->
-    <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
-      🌙
-    </button>
+<!-- Tombol Toggle Tema dan Waktu -->
+<div class="nav-tools">
+  <div id="datetime" class="datetime"></div> <!-- Ini tempat waktu realtime -->
+  |
+  <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
+    🌙
+  </button>
+</div>
+
   </div>
 </nav>
     
@@ -92,6 +133,24 @@ window.addEventListener('DOMContentLoaded', () => {
 toggleBtn.addEventListener('click', toggleTheme);
 
   
+
+// Sudah ada script hamburger dan theme toggle di atas...
+
+// Script Tanggal dan Waktu Realtime
+function updateDateTime() {
+  const now = new Date();
+  const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+  const day = days[now.getDay()];
+  const date = now.toLocaleDateString('id-ID');
+  const time = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  document.getElementById('datetime').textContent = `${day}, ${date} ${time}`;
+}
+
+// Update setiap detik
+setInterval(updateDateTime, 1000);
+updateDateTime(); // Panggil pertama kali agar tidak delay
+
+
 </script>
 
 
@@ -110,46 +169,126 @@ toggleBtn.addEventListener('click', toggleTheme);
   </div>
 
   <div class="main-container">
-    <h1>Blog</h1>
+    <div class="page-header">
+  <h1>Blog Pembelajaran Saya</h1>
+  <p class="page-description">
+    Selamat datang di blog pembelajaran saya! Di sini, saya membagikan berbagai materi pelajaran, tutorial, dan tips belajar yang bermanfaat untuk membantu Anda memahami berbagai konsep dan topik. Blog ini bertujuan untuk menjadi sumber daya yang berguna bagi pelajar dan siapa saja yang ingin meningkatkan pengetahuan mereka dalam bidang pemograman web.
+  </p>
+</div>
 
-<ul>
-    
-    <li>
-        <a href="/2025/04/18/config.yml.html">Config.yml</a>
-        <p>18 Apr 2025</p>
-        <p><p>Penjelasan tentang config.yml</p>
-</p>    
-    </li>
-    
-    <li>
-        <a href="/2025/03/20/html-link-dan-list.html">HTML Link dan Lists</a>
-        <p>20 Mar 2025</p>
-        <p><p>Penjelasan tentang link dan lists pada HTML</p>
-</p>    
-    </li>
-    
-    <li>
-        <a href="/2025/03/13/layout-dan-navigation.html">Layout dan Navigation</a>
-        <p>13 Mar 2025</p>
-        <p><p>Penjelasan tentang Layout dan Navigation</p>
-</p>    
-    </li>
-    
-    <li>
-        <a href="/2025/03/06/markdown.html">Markdown</a>
-        <p>06 Mar 2025</p>
-        <p><p>Penjelasan tentang markdown</p>
-</p>    
-    </li>
-    
-    <li>
-        <a href="/2025/02/20/instalasi-ruby-dan-jekyll.html">Instalasi Ruby dan Jekyll</a>
-        <p>20 Feb 2025</p>
-        <p><p>Penjelasan tentang instalasi ruby dan jekyll</p>
-</p>    
-    </li>
-    
-</ul>
+<div class="blog-layout">
+  <!-- Kiri: Daftar post -->
+  <div class="blog-container">
+    <h1>Blog</h1>
+    <ul id="post-list">
+      
+      
+        <li class="post-item" data-month="2025-05">
+          <a href="/2025/05/07/sass-dan-scss.html">SCSS dan SASS</a>
+          <p>07 May 2025</p>
+          <p><p>Penjelasan tentang SCSS dan SASS</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-05">
+          <a href="/2025/05/07/responsive-website.html">Responsive Web Design</a>
+          <p>07 May 2025</p>
+          <p><p>Penjelasan reponsive web design</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-04">
+          <a href="/2025/04/24/plugin.html">Plugin</a>
+          <p>24 Apr 2025</p>
+          <p><p>Penjelasan tentang Plugin</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-04">
+          <a href="/2025/04/17/config.yml.html">Config.yml</a>
+          <p>17 Apr 2025</p>
+          <p><p>Penjelasan tentang config.yml</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-03">
+          <a href="/2025/03/20/html-link-dan-list.html">HTML Link dan Lists</a>
+          <p>20 Mar 2025</p>
+          <p><p>Penjelasan tentang link dan lists pada HTML</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-03">
+          <a href="/2025/03/13/layout-dan-navigation.html">Layout dan Navigation</a>
+          <p>13 Mar 2025</p>
+          <p><p>Penjelasan tentang Layout dan Navigation</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-03">
+          <a href="/2025/03/06/markdown.html">Markdown</a>
+          <p>06 Mar 2025</p>
+          <p><p>Penjelasan tentang markdown</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-02">
+          <a href="/2025/02/20/instalasi-ruby-dan-jekyll.html">Instalasi Ruby dan Jekyll</a>
+          <p>20 Feb 2025</p>
+          <p><p>Penjelasan tentang instalasi ruby dan jekyll</p>
+</p>
+        </li>
+      
+    </ul>
+
+    <!-- Pesan jika tidak ada postingan -->
+    <p id="no-post-message" style="display: none;">Tidak ada postingan di bulan ini.</p>
+  </div>
+
+  <!-- Kanan: Sidebar pencarian -->
+  <div class="search-sidebar">
+    <h2>Pencarian Bulanan</h2>
+    <form id="search-month-form" class="search-form">
+      <label for="month">Pilih Bulan:</label>
+      <input type="month" id="month" name="month" class="search-input">
+      <button type="submit" class="search-button">Cari</button>
+    </form>
+  </div>
+</div>
+
+<!-- Script filter bulan -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const posts = document.querySelectorAll(".post-item");
+  const noPostMessage = document.getElementById("no-post-message");
+
+  function filterByMonth(selectedMonth) {
+    let postsVisible = false;
+
+    posts.forEach(post => {
+      const postMonth = post.getAttribute("data-month");
+      if (selectedMonth && postMonth !== selectedMonth) {
+        post.style.display = "none";
+      } else {
+        post.style.display = "block";
+        postsVisible = true;
+      }
+    });
+
+    if (!postsVisible) {
+      noPostMessage.style.display = "block";
+    } else {
+      noPostMessage.style.display = "none";
+    }
+  }
+
+  document.getElementById("search-month-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const selectedMonth = document.getElementById("month").value;
+    filterByMonth(selectedMonth);
+  });
+});
+</script>
   </div>
 
   <footer>
@@ -171,7 +310,9 @@ toggleBtn.addEventListener('click', toggleTheme);
     </div>
 </footer>
 
-</body>
+
+
+
 
 </body>
 </html>

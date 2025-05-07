@@ -2,7 +2,7 @@
 title: Amirullah310's Blog
 description: Personal blog powered by Jekyll and GitHub Pages
 url: 'https://amirullah310.github.io'  # URL utama situs
-baseurl: ''  # Kosongkan jika di-root domain GitHub Pages
+baseurl: ''  
 
 # === Info Penulis ===
 author:
@@ -14,3 +14,9 @@ social_links:
   github: https://github.com/amirullah310
   linkedin: https://www.linkedin.com/in/amirullah310/
   twitter: https://twitter.com/amirullah310
+
+# === Plugin ===
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

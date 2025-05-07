@@ -1,16 +1,76 @@
 ---
-layout : default
-title : blog
+layout: default
+title: Blog
 ---
 
-<h1>Blog</h1>
 
-<ul>
-    {% for post in site.posts %}
-    <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <p>{{ post.date | date_to_string }}</p>
-        <p>{{ post.excerpt }}</p>    
-    </li>
-    {% endfor %}
-</ul>
+<div class="page-header">
+  <h1>Blog Pembelajaran Saya</h1>
+  <p class="page-description">
+    Selamat datang di blog pembelajaran saya! Di sini, saya membagikan berbagai materi pelajaran, tutorial, dan tips belajar yang bermanfaat untuk membantu Anda memahami berbagai konsep dan topik. Blog ini bertujuan untuk menjadi sumber daya yang berguna bagi pelajar dan siapa saja yang ingin meningkatkan pengetahuan mereka dalam bidang pemograman web.
+  </p>
+</div>
+
+<div class="blog-layout">
+  <!-- Kiri: Daftar post -->
+  <div class="blog-container">
+    <h1>Blog</h1>
+    <ul id="post-list">
+      {% assign filtered_posts = site.posts %}
+      {% for post in filtered_posts %}
+        <li class="post-item" data-month="{{ post.date | date: '%Y-%m' }}">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <p>{{ post.date | date_to_string }}</p>
+          <p>{{ post.excerpt }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Pesan jika tidak ada postingan -->
+    <p id="no-post-message" style="display: none;">Tidak ada postingan di bulan ini.</p>
+  </div>
+
+  <!-- Kanan: Sidebar pencarian -->
+  <div class="search-sidebar">
+    <h2>Pencarian Bulanan</h2>
+    <form id="search-month-form" class="search-form">
+      <label for="month">Pilih Bulan:</label>
+      <input type="month" id="month" name="month" class="search-input">
+      <button type="submit" class="search-button">Cari</button>
+    </form>
+  </div>
+</div>
+
+<!-- Script filter bulan -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const posts = document.querySelectorAll(".post-item");
+  const noPostMessage = document.getElementById("no-post-message");
+
+  function filterByMonth(selectedMonth) {
+    let postsVisible = false;
+
+    posts.forEach(post => {
+      const postMonth = post.getAttribute("data-month");
+      if (selectedMonth && postMonth !== selectedMonth) {
+        post.style.display = "none";
+      } else {
+        post.style.display = "block";
+        postsVisible = true;
+      }
+    });
+
+    if (!postsVisible) {
+      noPostMessage.style.display = "block";
+    } else {
+      noPostMessage.style.display = "none";
+    }
+  }
+
+  document.getElementById("search-month-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const selectedMonth = document.getElementById("month").value;
+    filterByMonth(selectedMonth);
+  });
+});
+</script>

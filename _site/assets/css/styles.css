@@ -56,23 +56,6 @@ p {
   margin-bottom: 16px;
 }
 
-/* Blog Container */
-.blog-container {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.8); /* Glassmorphism */
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  box-shadow: 0 6px 20px var(--shadow-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-}
-
 /* List */
 ul {
   list-style-type: none;
@@ -111,6 +94,266 @@ a:hover {
   color: #2c7cbf;
 }
 
+/* Container universal */
+.container {
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* About */
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #0077cc;
+  margin-bottom: 16px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #0077cc;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  color: #333;
+}
+
+.card li {
+  margin-bottom: 20px;
+}
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #0077cc;
+  color: white;
+}
+
+.cta-section a {
+  color: #ffeb3b;
+  text-decoration: underline;
+}
+
+.hero {
+  margin-top: -100px;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero .text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero .text h1 {
+  font-size: 2.5rem;
+}
+
+.hero .highlight {
+  color: #0077cc;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+.hero .image img {
+  width: 220px;
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill-section {
+  padding: 80px 20px;
+}
+
+.skill-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.skill-item {
+  text-align: center;
+}
+
+.skill-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-item img:hover {
+  transform: scale(1.1);
+}
+
+.skill-item p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara jam dan tombol tema */
+}
+
+.datetime {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+[data-theme=dark] .datetime {
+  color: #f1f1f1;
+}
+
+/* Styling untuk form pencarian */
+/* Layout utama blog */
+/* Blog Container */
+.blog-container {
+  margin: 30px auto;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.8); /* Glassmorphism */
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.blog-layout {
+  display: flex;
+  margin: 40px auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Daftar post */
+.blog-container {
+  width: 80%;
+}
+
+/* Sidebar pencarian */
+.search-sidebar {
+  width: 20%;
+  margin-top: 30px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  height: fit-content;
+}
+
+/* Style form pencarian */
+.search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-form label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.search-form button {
+  padding: 10px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background: var(--primary-color);
+}
+
+#no-post-message {
+  font-size: 18px;
+  color: rgba(164, 174, 177, 0.762);
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Responsive layout untuk layar kecil */
+@media (max-width: 768px) {
+  .blog-layout {
+    flex-direction: column;
+  }
+  .search-sidebar {
+    width: 87%;
+    margin-bottom: 20px;
+    order: -1; /* Naikkan ke atas */
+  }
+  .blog-container {
+    width: 80%;
+  }
+}
 /* Navbar */
 nav {
   background: rgba(255, 255, 255, 0.7); /* Glassmorphism */
@@ -230,11 +473,15 @@ nav {
     opacity: 1;
     visibility: visible;
   }
+  .datetime {
+    font-size: 0.7rem;
+  }
 }
 .friends-list li {
   margin-bottom: 20px;
   margin-top: 10px;
   margin-left: -15px;
+  margin-right: 15px;
   padding: 20px;
   background: rgba(244, 244, 245, 0.7);
   backdrop-filter: blur(8px);
@@ -269,14 +516,25 @@ nav {
   color: #000000; /* Lighter placeholder text in dark mode */
 }
 
+.page-title, .page-description, .page-note, .h2, .page-header h1 {
+  padding: 0 20px;
+}
+
+@media (max-width: 428px) {
+  .friend-search {
+    width: 270px;
+  }
+  .hero {
+    padding: 20px;
+  }
+  .friend-container {
+    padding: 20px;
+  }
+}
 /* Style untuk pesan 'Nama tidak ditemukan' */
 .no-results-message {
   margin-top: 55px;
   text-align: center;
-}
-
-.friend-container {
-  height: 100 vh;
 }
 
 .friends-list {
@@ -467,6 +725,20 @@ footer {
   z-index: 1;
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: transform 0.3s ease;
+  color: var(--text-color);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
 /* === Theme Toggle === */
 [data-theme=dark] {
   --primary-color: #60a5fa;
@@ -475,6 +747,9 @@ footer {
   --background-color: #111827;
   --border-color: #374151;
   --shadow-color: rgba(0, 0, 0, 0.4);
+  /* Cards */
+  /* CTA */
+  /* Hero Section */
 }
 [data-theme=dark] body {
   background-color: var(--background-color);
@@ -530,19 +805,59 @@ footer {
 [data-theme=dark] .friend-search::placeholder {
   color: var(--primary-color); /* Lighter placeholder text in dark mode */
 }
-
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 8px 12px;
-  transition: transform 0.3s ease;
+[data-theme=dark] .about-section h2 {
+  color: var(--primary-color);
+}
+[data-theme=dark] .about-section p {
   color: var(--text-color);
 }
-
-.theme-toggle:hover {
-  transform: scale(1.2);
+[data-theme=dark] .card {
+  background: var(--secondary-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+[data-theme=dark] .card h3 {
+  color: var(--primary-color);
+}
+[data-theme=dark] .card ul {
+  color: var(--text-color);
+}
+[data-theme=dark] .cta-section {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+[data-theme=dark] .cta-section a {
+  color: var(--primary-color);
+}
+[data-theme=dark] .hero .text h1 {
+  color: var(--text-color);
+}
+[data-theme=dark] .hero .highlight {
+  color: var(--primary-color);
+}
+[data-theme=dark] .tagline {
+  color: #9ca3af;
+}
+[data-theme=dark] .search-sidebar {
+  background: rgba(55, 65, 81, 0.6);
+  border: 1px solid var(--border-color);
+}
+[data-theme=dark] .search-form button {
+  background: var(--primary-color);
+  color: white;
+}
+[data-theme=dark] .search-form button:hover {
+  background: #3b82f6;
+}
+[data-theme=dark] .search-input {
+  background: #1f2937;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+[data-theme=dark] .search-input::placeholder {
+  color: rgba(243, 244, 246, 0.5);
+}
+[data-theme=dark] #no-post-message {
+  color: rgba(243, 244, 246, 0.6);
 }
 
 /*# sourceMappingURL=styles.css.map */
