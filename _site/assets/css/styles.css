@@ -636,6 +636,83 @@ footer {
     opacity: 0;
   }
 }
+/* Kontak Section */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-section .container {
+  margin: 0 auto;
+}
+
+.contact-section h2.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-section p.section-subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.contact-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 90%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
 /* Acak ukuran, durasi, posisi dan delay */
 .bubble:nth-child(1) {
   left: 10%;
@@ -739,6 +816,28 @@ footer {
   transform: scale(1.2);
 }
 
+/* Tombol Scroll to Top */
+.scroll-to-top-btn {
+  z-index: 9999;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3498db; /* Warna tombol */
+  color: white;
+  border: none;
+  border-radius: 30%;
+  padding: 15px;
+  font-size: 18px;
+  display: none; /* Tombol tidak terlihat pada awalnya */
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: #2980b9; /* Warna saat hover */
+}
+
 /* === Theme Toggle === */
 [data-theme=dark] {
   --primary-color: #60a5fa;
@@ -750,6 +849,7 @@ footer {
   /* Cards */
   /* CTA */
   /* Hero Section */
+  /* Kontak Section - Dark Mode */
 }
 [data-theme=dark] body {
   background-color: var(--background-color);
@@ -858,6 +958,34 @@ footer {
 }
 [data-theme=dark] #no-post-message {
   color: rgba(243, 244, 246, 0.6);
+}
+[data-theme=dark] .contact-section {
+  background-color: var(--background-color);
+  color: #f0f0f0;
+}
+[data-theme=dark] .contact-section h2.section-title {
+  color: #ffffff;
+}
+[data-theme=dark] .contact-section p.section-subtitle {
+  color: #bbbbbb;
+}
+[data-theme=dark] .contact-form {
+  background: var(--secondary-color);
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+[data-theme=dark] .form-group label {
+  color: #dddddd;
+}
+[data-theme=dark] .form-group input,
+[data-theme=dark] .form-group textarea {
+  border: 1px solid #333;
+  background-color: var(--background-color);
+  color: #f0f0f0;
+}
+[data-theme=dark] .form-group input:focus,
+[data-theme=dark] .form-group textarea:focus {
+  border-color: #0d6efd;
+  background-color: var(--background-color);
 }
 
 /*# sourceMappingURL=styles.css.map */

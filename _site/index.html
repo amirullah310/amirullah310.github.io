@@ -17,6 +17,9 @@
 
     <!-- Javascript -->
     <script src="/assets/js/scripts.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     
 
 
@@ -74,7 +77,8 @@
     <!-- Tombol Toggle Tema -->
 <!-- Tombol Toggle Tema dan Waktu -->
 <div class="nav-tools">
-  <div id="datetime" class="datetime"></div> <!-- Ini tempat waktu realtime -->
+  <div id="" class="">AMIRULLAH</div> <!-- Ini tempat waktu realtime -->
+  <!-- <div id="datetime" class="datetime"></div> Ini tempat waktu realtime -->
   |
   <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
     🌙
@@ -154,6 +158,8 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 </script>
 
 
+ 
+
 
   <div class="background-bubbles">
     <div class="bubble"></div>
@@ -203,6 +209,31 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
     </p>
   </div>
 </section>
+
+<!-- Kartu Info -->
+<section class="cards-section" data-aos="fade-left">
+  <div class="container">
+    <div class="cards">
+      <div class="card" data-aos="zoom-in">
+        <h3>Hobi</h3>
+        <ul>
+          <li>Menggambar</li>
+          <li>Bulutangkis</li>
+          <li>Ngoding</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Pendidikan</h3>
+        <ul>
+          <li>SDN 2 Blang Mangat</li>
+          <li>MTsN 2 Kota Lhokseumawe</li>
+          <li>SMKN 1 Kota Lhokseumawe – RPL</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- Skill Section -->
@@ -316,39 +347,146 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
   </div>
 </section>
 
-
-
-
-
-
-<!-- Kartu Info -->
-<section class="cards-section" data-aos="fade-left">
+<!-- My Project Section -->
+<!-- <section class="my-project-section" data-aos="fade-up">
   <div class="container">
-    <div class="cards">
-      <div class="card" data-aos="zoom-in">
-        <h3>Hobi</h3>
-        <ul>
-          <li>Menggambar</li>
-          <li>Bulutangkis</li>
-          <li>Ngoding</li>
-        </ul>
+    <h2 class="section-title">My Project</h2>
+    
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        <div class="project-slide">
+          <img src="assets/images/Screenshot 2025-05-14 160309.png" alt="Project 1">
+          <div class="image-caption">Nama Proyek</div>
+        </div>
+        <div class="project-slide">
+          <img src="assets/images/Screenshot 2025-05-14 160309.png" alt="Project 2">
+          <div class="image-caption">Nama Proyek</div>
+        </div>
+        <div class="project-slide">
+          <img src="assets/images/Screenshot 2025-05-14 160309.png" alt="Project 3">
+          <div class="image-caption">Nama Proyek</div>
+        </div>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Pendidikan</h3>
-        <ul>
-          <li>SDN 2 Blang Mangat</li>
-          <li>MTsN 2 Kota Lhokseumawe</li>
-          <li>SMKN 1 Kota Lhokseumawe – RPL</li>
-        </ul>
-      </div>
+      <button class="slider-btn prev">&#10094;</button>
+      <button class="slider-btn next">&#10095;</button>
     </div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+
+<!-- Form Kontak -->
+<section class="contact-section" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title" style="color: var(--primary-color);">Hubungi Saya</h2>
+    <p class="section-subtitle">Kirimkan pesan atau pertanyaan Anda melalui formulir di bawah ini.</p>
+    
+    <form action="https://formspree.io/f/mjkwpnrq" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Nama</label>
+        <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda" autocomplete="">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required placeholder="Masukkan email Anda" autocomplete="">
+      </div>
+      <div class="form-group">
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tulis pesan Anda di sini"></textarea autocomplete>
+      </div>
+      <button type="submit" class="btn">Kirim Pesan</button>
+    </form>
   </div>
 </section>
 
+<!-- SweetAlert2 -->
+
+<script>
+  const form = document.querySelector(".contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Mencegah reload default form
+
+    const formData = new FormData(form);
+
+    fetch("https://formspree.io/f/mjkwpnrq", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Terima kasih!',
+          text: 'Pesan Anda berhasil dikirim.',
+          confirmButtonColor: getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim()
+        });
+        form.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.',
+        confirmButtonColor: '#e53e3e'
+      });
+    });
+  });
+
+// Ambil elemen yang dibutuhkan
+const sliderWrapper = document.querySelector('.slider-wrapper');
+const slides = document.querySelectorAll('.project-slide');
+const nextButton = document.querySelector('.slider-btn.next');
+const prevButton = document.querySelector('.slider-btn.prev');
+let currentSlide = 0;
+
+// Fungsi update posisi slide
+function updateSliderPosition() {
+  const offset = -currentSlide * 100; // Geser berdasarkan index
+  sliderWrapper.style.transform = `translateX(${offset}%)`;
+}
+
+// Fungsi ke slide berikutnya
+function moveToNextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateSliderPosition();
+}
+
+// Fungsi ke slide sebelumnya
+function moveToPrevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateSliderPosition();
+}
+
+// Tombol manual
+nextButton.addEventListener('click', moveToNextSlide);
+prevButton.addEventListener('click', moveToPrevSlide);
+
+// Auto-slide
+setInterval(moveToNextSlide, 5000);
+
+
+</script>
 
 
 
   </div>
+  <!-- Tombol Scroll to Top -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Kembali ke atas">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
 
   <footer>
     <div class="footer-container">
@@ -375,3 +513,28 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 
 </body>
 </html>
+
+<script>
+  // Ambil tombol
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  // Event scroll untuk memeriksa apakah halaman digulir ke bawah
+  window.onscroll = function () {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block"; // Tampilkan tombol
+    } else {
+      scrollToTopBtn.style.display = "none"; // Sembunyikan tombol
+    }
+  };
+
+  // Saat tombol diklik, halaman akan digulirkan ke atas
+  scrollToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Efek scroll halus
+    });
+  });
+
+  // Script Tanggal dan Waktu Realtime
+
+</script>

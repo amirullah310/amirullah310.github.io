@@ -17,6 +17,9 @@
 
     <!-- Javascript -->
     <script src="/assets/js/scripts.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     
 
 
@@ -75,7 +78,8 @@
     <!-- Tombol Toggle Tema -->
 <!-- Tombol Toggle Tema dan Waktu -->
 <div class="nav-tools">
-  <div id="datetime" class="datetime"></div> <!-- Ini tempat waktu realtime -->
+  <div id="" class="">AMIRULLAH</div> <!-- Ini tempat waktu realtime -->
+  <!-- <div id="datetime" class="datetime"></div> Ini tempat waktu realtime -->
   |
   <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
     🌙
@@ -155,6 +159,8 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 </script>
 
 
+ 
+
 
   <div class="background-bubbles">
     <div class="bubble"></div>
@@ -175,11 +181,11 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 
 <p>Penjelasan tentang link dan lists pada HTML</p>
 
-<p><img src="/assets/images/html-link-dan-lists.png" alt="Html Link dan Lists" /></p>
+<!-- ![Html Link dan Lists](/assets/images/html-link-dan-lists.png)
 
-<p>Sumber : Wikipedia</p>
+Sumber : Wikipedia  -->
 
-<h1 id="penjelasan-lengkap-tentang-link-dan-lists-pada-html"><strong>Penjelasan Lengkap tentang Link dan Lists pada HTML</strong></h1>
+<h2 id="penjelasan-lengkap-tentang-link-dan-lists-pada-html"><strong>Penjelasan Lengkap tentang Link dan Lists pada HTML</strong></h2>
 
 <p>Dalam <strong>HTML</strong> (<em>HyperText Markup Language</em>), <strong>link</strong> dan <strong>lists</strong> adalah elemen dasar yang sangat penting dalam membuat struktur dan navigasi halaman web. Berikut adalah penjelasan lengkap tentang kedua elemen ini:</p>
 
@@ -384,7 +390,13 @@ Kunjungi Example dengan Aman
  <strong>Ordered List (<code class="language-plaintext highlighter-rouge">&lt;ol&gt;</code>)</strong> → Daftar terurut (menggunakan angka, huruf, atau simbol).<br />
  <strong>Unordered List (<code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code>)</strong> → Daftar tidak terurut (menggunakan bullet).</p>
 
+
   </div>
+  <!-- Tombol Scroll to Top -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Kembali ke atas">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
 
   <footer>
     <div class="footer-container">
@@ -411,3 +423,28 @@ Kunjungi Example dengan Aman
 
 </body>
 </html>
+
+<script>
+  // Ambil tombol
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  // Event scroll untuk memeriksa apakah halaman digulir ke bawah
+  window.onscroll = function () {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block"; // Tampilkan tombol
+    } else {
+      scrollToTopBtn.style.display = "none"; // Sembunyikan tombol
+    }
+  };
+
+  // Saat tombol diklik, halaman akan digulirkan ke atas
+  scrollToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Efek scroll halus
+    });
+  });
+
+  // Script Tanggal dan Waktu Realtime
+
+</script>

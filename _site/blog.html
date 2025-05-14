@@ -17,6 +17,9 @@
 
     <!-- Javascript -->
     <script src="/assets/js/scripts.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     
 
 
@@ -74,7 +77,8 @@
     <!-- Tombol Toggle Tema -->
 <!-- Tombol Toggle Tema dan Waktu -->
 <div class="nav-tools">
-  <div id="datetime" class="datetime"></div> <!-- Ini tempat waktu realtime -->
+  <div id="" class="">AMIRULLAH</div> <!-- Ini tempat waktu realtime -->
+  <!-- <div id="datetime" class="datetime"></div> Ini tempat waktu realtime -->
   |
   <button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle">
     🌙
@@ -154,6 +158,8 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 </script>
 
 
+ 
+
 
   <div class="background-bubbles">
     <div class="bubble"></div>
@@ -182,6 +188,20 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
     <h1>Blog</h1>
     <ul id="post-list">
       
+      
+        <li class="post-item" data-month="2025-05">
+          <a href="/2025/05/14/sweetalert.html">Sweet Alert</a>
+          <p>14 May 2025</p>
+          <p><p>Penjelasan tentang Sweet Alert</p>
+</p>
+        </li>
+      
+        <li class="post-item" data-month="2025-05">
+          <a href="/2025/05/14/formspree.html">Formspree</a>
+          <p>14 May 2025</p>
+          <p><p>Penjelasan tentang formspree</p>
+</p>
+        </li>
       
         <li class="post-item" data-month="2025-05">
           <a href="/2025/05/07/sass-dan-scss.html">SCSS dan SASS</a>
@@ -289,7 +309,13 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+
   </div>
+  <!-- Tombol Scroll to Top -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Kembali ke atas">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
 
   <footer>
     <div class="footer-container">
@@ -316,3 +342,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
+
+<script>
+  // Ambil tombol
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  // Event scroll untuk memeriksa apakah halaman digulir ke bawah
+  window.onscroll = function () {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block"; // Tampilkan tombol
+    } else {
+      scrollToTopBtn.style.display = "none"; // Sembunyikan tombol
+    }
+  };
+
+  // Saat tombol diklik, halaman akan digulirkan ke atas
+  scrollToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Efek scroll halus
+    });
+  });
+
+  // Script Tanggal dan Waktu Realtime
+
+</script>

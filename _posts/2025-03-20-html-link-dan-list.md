@@ -6,11 +6,11 @@ title : "HTML Link dan Lists"
 
 Penjelasan tentang link dan lists pada HTML
 
-![Html Link dan Lists](/assets/images/html-link-dan-lists.png)
+<!-- ![Html Link dan Lists](/assets/images/html-link-dan-lists.png)
 
-Sumber : Wikipedia 
+Sumber : Wikipedia  -->
 
-# **Penjelasan Lengkap tentang Link dan Lists pada HTML**
+## **Penjelasan Lengkap tentang Link dan Lists pada HTML**
 
 Dalam **HTML** (*HyperText Markup Language*), **link** dan **lists** adalah elemen dasar yang sangat penting dalam membuat struktur dan navigasi halaman web. Berikut adalah penjelasan lengkap tentang kedua elemen ini:
 

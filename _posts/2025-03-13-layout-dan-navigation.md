@@ -6,7 +6,7 @@ title : "Layout dan Navigation"
 
 Penjelasan tentang Layout dan Navigation
 
-# **Layout dan Navigasi**
+## **Layout dan Navigasi**
 
 ## **1. Layout**
 ### **Pengertian Layout**

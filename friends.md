@@ -66,4 +66,35 @@ title: Friends
       noResultsMessage.style.display = "none"; // Sembunyikan pesan
     }
   }
+
+  // Fungsi untuk konfirmasi ketika mengklik teman
+  function confirmFriendLink(event) {
+    event.preventDefault(); // Mencegah link terbuka langsung
+
+    const friendName = event.target.textContent; // Nama teman yang diklik
+
+    // Menampilkan konfirmasi SweetAlert
+    Swal.fire({
+      title: 'Apakah Anda yakin?',
+      text: `Anda akan diarahkan ke profil ${friendName}. Lanjutkan?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Ya, Buka Profil!',
+      cancelButtonText: 'Batal',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = event.target.href; // Membuka link teman jika konfirmasi Ya
+      }
+    });
+  }
+
+  // Menambahkan event listener untuk setiap teman di daftar
+  document.addEventListener('DOMContentLoaded', () => {
+    const friendLinks = document.querySelectorAll('.friend-card a');
+    friendLinks.forEach(link => {
+      link.addEventListener('click', confirmFriendLink);
+    });
+  });
 </script>

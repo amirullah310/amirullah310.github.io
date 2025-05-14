@@ -6,7 +6,7 @@ title : "Responsive Web Design"
 
 Penjelasan reponsive web design
 
-# Panduan Lengkap Responsive Web Design
+## Panduan Lengkap Responsive Web Design
 
 **Responsive Web Design (RWD)** adalah pendekatan dalam pembuatan desain web yang memungkinkan tampilan website untuk menyesuaikan secara otomatis dengan ukuran layar perangkat yang digunakan, seperti desktop, tablet, atau smartphone. Tujuan utamanya adalah memberikan pengalaman pengguna yang optimal di berbagai perangkat dengan berbagai ukuran layar.
 

@@ -6,7 +6,7 @@ title : "SCSS dan SASS"
 
 Penjelasan tentang SCSS dan SASS
 
-# Panduan Lengkap SCSS dan SASS
+## Panduan Lengkap SCSS dan SASS
 
 SASS (Syntactically Awesome Stylesheets) adalah preprocessor CSS yang memberikan fitur tambahan yang memperluas kemampuan CSS tradisional. SASS memiliki dua sintaks yang berbeda: **SASS** dan **SCSS**. Meskipun keduanya memiliki fungsionalitas yang sama, mereka menggunakan pendekatan sintaks yang berbeda, sehingga bisa disesuaikan dengan preferensi pengembang.
 
