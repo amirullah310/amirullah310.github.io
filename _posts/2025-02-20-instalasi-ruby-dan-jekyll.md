@@ -29,10 +29,9 @@ Penjelasan tentang instalasi ruby dan jekyll
    gcc -v
    g++ -v
    make -v
-   ```
-   <p>  
+   ```  
 Jika belum terpasang, install terlebih dahulu dengan <strong>MinGW</strong> (untuk Windows) atau gunakan package manager seperti <code>apt</code> (untuk Linux).  
-</p>
+
 
 
 4. **Download Ruby Installer**  
