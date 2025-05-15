@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Friends</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-      <!-- AOS Library CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="icon" href="/assets/images/favicon.ico" />
 
     <!-- Javascript -->
     <script src="/assets/js/scripts.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    
-
-
-
     <!-- plugins -->
-     <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Amirullah310&apos;s Blog" />
-     <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Amirullah310&apos;s Blog" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Friends | Amirullah310’s Blog</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Friends" />
@@ -45,9 +38,76 @@
 <!-- End Jekyll SEO tag -->
 
 
+    <style>
+      /* Loader Styles */
+      .loader {
+        position: fixed;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background: white;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+
+      .jimu-primary-loading:before,
+      .jimu-primary-loading:after {
+        position: absolute;
+        top: 0;
+        content: '';
+      }
+
+      .jimu-primary-loading:before {
+        left: -19.992px;
+      }
+
+      .jimu-primary-loading:after {
+        left: 19.992px;
+        animation-delay: 0.32s !important;
+      }
+
+      .jimu-primary-loading:before,
+      .jimu-primary-loading:after,
+      .jimu-primary-loading {
+        background: #076fe5;
+        animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+        width: 13.6px;
+        height: 32px;
+      }
+
+      .jimu-primary-loading {
+        text-indent: -9999em;
+        margin: auto;
+        position: absolute;
+        right: calc(50% - 6.8px);
+        top: calc(50% - 16px);
+        animation-delay: 0.16s !important;
+      }
+
+      @keyframes loading-keys-app-loading {
+        0%, 80%, 100% {
+          opacity: .75;
+          box-shadow: 0 0 #076fe5;
+          height: 32px;
+        }
+        40% {
+          opacity: 1;
+          box-shadow: 0 -8px #076fe5;
+          height: 40px;
+        }
+      }
+    </style>
 </head>
-  
+
 <body>
+  <!-- Loader -->
+<div class="loader">
+  <div class="justify-content-center jimu-primary-loading"></div>
+</div>
+
+
   <nav id="navbar">
   <div class="nav-container">
     <!-- Tombol Hamburger -->
@@ -161,8 +221,6 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 
 </script>
 
-
- 
 
 
   <div class="background-bubbles">
@@ -381,13 +439,12 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 </script>
 
 
-
   </div>
-  <!-- Tombol Scroll to Top -->
-<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Kembali ke atas">
-  <i class="fa fa-arrow-up"></i>
-</button>
 
+  <!-- Tombol Scroll to Top -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Kembali ke atas">
+    <i class="fa fa-arrow-up"></i>
+  </button>
 
   <footer>
     <div class="footer-container">
@@ -409,33 +466,32 @@ updateDateTime(); // Panggil pertama kali agar tidak delay
 </footer>
 
 
+  <script>
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    };
+    scrollToTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-
-
+    // Loader fade out after minimal 1 second
+    window.addEventListener('load', () => {
+      const loader = document.querySelector('.loader');
+      if (loader) {
+        setTimeout(() => {
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 500); // fade out 0.5s
+        }, 1000); // minimal 1 detik tampil loading
+      }
+    });
+  </script>
 </body>
 </html>
-
-<script>
-  // Ambil tombol
-  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-  // Event scroll untuk memeriksa apakah halaman digulir ke bawah
-  window.onscroll = function () {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      scrollToTopBtn.style.display = "block"; // Tampilkan tombol
-    } else {
-      scrollToTopBtn.style.display = "none"; // Sembunyikan tombol
-    }
-  };
-
-  // Saat tombol diklik, halaman akan digulirkan ke atas
-  scrollToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Efek scroll halus
-    });
-  });
-
-  // Script Tanggal dan Waktu Realtime
-
-</script>

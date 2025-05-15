@@ -35,46 +35,45 @@ title: Audio & Video
 
   <!-- Daftar Video -->
   <div class="media-section">
-    <h2>Video Pembelajaran</h2>
+    <h2>Video Mobile Legend</h2>
     <div class="video-grid">
       <div class="video-item tiktok-style">
-        <p><strong>Penjelasan Materi</strong></p>
+        <p><strong>Gameplay</strong></p>
         <div class="video-container">
-          <video controls autoplay muted loop playsinline>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <video controls autoplay muted  loop playsinline>
+            <source src="assets/videos/video1.mp4" type="video/mp4">
             Browser Anda tidak mendukung pemutar video.
           </video>
         </div>
       </div>
-      <div class="video-item tiktok-style">
-        <p><strong>Penjelasan Materi</strong></p>
-        <div class="video-container">
-          <video controls autoplay muted loop playsinline>
-            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutar video.
-          </video>
-        </div>
-      </div>
-    </div>
-    <div class="video-grid">
-      <div class="video-item tiktok-style">
-        <p><strong>Penjelasan Materi</strong></p>
-        <div class="video-container">
-          <video controls autoplay muted loop playsinline>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutar video.
-          </video>
-        </div>
-      </div>
-      <div class="video-item tiktok-style">
-        <p><strong>Penjelasan Materi</strong></p>
-        <div class="video-container">
-          <video controls autoplay muted loop playsinline>
-            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutar video.
-          </video>
-        </div>
-      </div>
+<div class="video-item tiktok-style">
+  <p><strong>Gameplay</strong></p>
+  <div class="video-container">
+    <video controls autoplay muted  loop playsinline>
+      <source src="assets/videos/video2.mp4" type="video/mp4">
+      Browser Anda tidak mendukung pemutar video.
+    </video>
+  </div>
+</div>
+<div class="video-item tiktok-style">
+  <p><strong>Gameplay</strong></p>
+  <div class="video-container">
+    <video controls autoplay muted  loop playsinline>
+      <source src="assets/videos/video3.mp4" type="video/mp4">
+      Browser Anda tidak mendukung pemutar video.
+    </video>
+  </div>
+</div> 
+<div class="video-item tiktok-style">
+  <p><strong>Gameplay</strong></p>
+  <div class="video-container">
+    <video controls autoplay muted   loop playsinline>
+      <source src="assets/videos/video4.mp4" type="video/mp4">
+      Browser Anda tidak mendukung pemutar video.
+    </video>
+  </div>
+</div>
+
     </div>
   </div>
 </div>
@@ -82,25 +81,22 @@ title: Audio & Video
 <style>
 :root {
   --primary-color: #60a5fa;
-  /* --text-color: #60a5fa; */
   --bg-light: #f9f9f9;
-  --radius: 20px;
+  --radius: 16px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .media-layout {
   padding: 20px 0;
-  /* max-width: 1200px; */
-  /* margin: auto; */
+
 }
 
 .page-header {
   margin-bottom: 30px;
-  text-align: left;
 }
 
 .page-header h1 {
-  font-size: 2em;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
@@ -110,7 +106,7 @@ title: Audio & Video
 }
 
 .media-section {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   padding: 0 20px;
 }
 
@@ -119,54 +115,75 @@ title: Audio & Video
   color: var(--primary-color);
 }
 
-.audio-item,
-.video-item {
-  margin-bottom: 25px;
-}
-
+/* AUDIO */
 .audio-list {
   list-style: none;
   padding: 0;
-}
-audio{
-    width: 95%;
+  margin: 0;
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+.audio-item {
+  margin-bottom: 20px;
+}
+
+audio {
+  width: 100%;
+  max-width: 600px;
+}
+
+
+.video-item {
+  text-align: center;
 }
 
 .video-container {
   position: relative;
-  /* width: 100%; */
-  height: 600px;
+  width: 100%;
+  aspect-ratio: 9 / 16; /* TikTok-like ratio */
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  background: #000;
+  background-color: #000;
 }
 
 .video-container video {
-  /* width: 100%; */
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius);
 }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktop: 4 per baris */
+  gap: 20px;
+  padding: 0;
+}
 
-/* Responsif khusus mobile */
-@media (max-width: 600px) {
-  .video-container {
-    height: 500px;
-  }
-
-  .page-header h1 {
-    font-size: 1.5em;
-  }
-
-  .page-description {
-    font-size: 1em;
+@media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet */
   }
 }
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr; /* Mobile */
+  }
+}
+
 </style>
+<script>
+  // Ambil semua video dalam container video
+  const videos = document.querySelectorAll('.video-container video');
+
+  videos.forEach(video => {
+    // Tambahkan event klik untuk toggle play/pause
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  });
+</script>
