@@ -812,7 +812,38 @@ textarea {
 .scroll-to-top-btn:hover {
   background-color: #2980b9; /* Warna saat hover */
 }
+/* From Uiverse.io by Jedi-hongbin */ 
+.buttonn {
+ display: flex;
+ height: 3em;
+ width: 100px;
+ align-items: center;
+ justify-content: center;
+ background-color: #eeeeee4b;
+ border-radius: 3px;
+ letter-spacing: 1px;
+ transition: all 0.2s linear;
+ cursor: pointer;
+ border: none;
+ background: #fff;
+}
 
+.buttonn > svg {
+ margin-right: 5px;
+ margin-left: 5px;
+ font-size: 20px;
+ transition: all 0.4s ease-in;
+}
+
+.buttonn:hover > svg {
+ font-size: 1.2em;
+ transform: translateX(-5px);
+}
+
+.buttonn:hover {
+ box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+ transform: translateY(-2px);
+}
 // /* Style untuk bagian "My Project" */
 // .my-project {
 //   background-color: #f4f4f4;
@@ -1027,6 +1058,14 @@ textarea {
   .bubble {
     background: rgba(96, 165, 250, 0.15);
   }
+  .buttonn{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 3px solid var(--border-color);
+  }
+.buttonn > svg {
+  border: 1px solid white;
+}
   
   .friend-search {
     background: #2C3547;

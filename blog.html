@@ -70,6 +70,26 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("search-month-form").addEventListener("submit", function(e) {
     e.preventDefault();
     const selectedMonth = document.getElementById("month").value;
+
+    // Menampilkan SweetAlert
+    if (!selectedMonth) {
+      Swal.fire({
+        title: 'Peringatan!',
+        text: 'Anda belum memilih bulan.',
+        icon: 'warning',
+        confirmButtonText: 'Tutup'
+      });
+      return;
+    }
+
+    // Menampilkan SweetAlert jika pencarian berhasil
+    Swal.fire({
+      title: 'Pencarian Bulan',
+      text: `Anda mencari postingan untuk bulan ${selectedMonth}.`,
+      icon: 'info',
+      confirmButtonText: 'Tutup'
+    });
+
     filterByMonth(selectedMonth);
   });
 });
